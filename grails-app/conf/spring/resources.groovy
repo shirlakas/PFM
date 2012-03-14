@@ -14,11 +14,13 @@ beans = {
 	
 	triagescoreHandler(com.pfm.handler.TriageScoreHandler){}
 	patientregisteredHandler(com.pfm.handler.PatientRegisteredHandler){}
-	waitforconsultationHandler(com.pfm.handler.WaitForConsultationHandler){}
-	waitforconsultationcompletedHandler(com.pfm.handler.WaitForConsultationCompletedHandler){}
-	consultationstartedHandler(com.pfm.handler.ConsultationStartedHandler){}
+	waitforconsultation1Handler(com.pfm.handler.WaitForConsultation1Handler){}
+	waitforconsultation2Handler(com.pfm.handler.WaitForConsultation2Handler){}
+	consultationstarted1Handler(com.pfm.handler.ConsultationStarted1Handler){}
+	consultationstarted2Handler(com.pfm.handler.ConsultationStarted2Handler){}
 	orderrequestHandler(com.pfm.handler.OrderRequestHandler){}
-	consultationcompletedHandler(com.pfm.handler.ConsultationCompletedHandler){}
+	consultationcompleted1Handler(com.pfm.handler.ConsultationCompleted1Handler){}
+	consultationcompleted2Handler(com.pfm.handler.ConsultationCompleted2Handler){}
 	waitfororderexecutionHandler(com.pfm.handler.WaitForOrderExecutionHandler){}
 	orderrequestcompletedHandler(com.pfm.handler.OrderRequestCompletedHandler){}
 	orderexecutioncompletedHandler(com.pfm.handler.OrderExecutionCompletedHandler){}
@@ -27,10 +29,8 @@ beans = {
 	waitforbedHandler(com.pfm.handler.WaitForBedHandler){}
 	dischargeHandler(com.pfm.handler.DischargeHandler){}
 	patientadmittedwithbedHandler(com.pfm.handler.PatientAdmittedWithBedHandler){}
-	waitedforbedcompletedHandler(com.pfm.handler.WaitedForBedCompletedHandler){}
 	patienttransportrequestHandler(com.pfm.handler.PatientTransportRequestHandler){}
 	waitfortransportHandler(com.pfm.handler.WaitForTransportHandler){}
-	waitfortransportcompletedHandler(com.pfm.handler.WaitForTransportCompletedHandler){}
 	patienttransportstartedHandler(com.pfm.handler.PatientTransportStartedHandler){}
-	patienttransportcompletedHandler(com.pfm.handler.PatientTransportCompletedHandler){}
+	patientarrivedinbedHandler(com.pfm.handler.PatientArrivedInBedHandler){}
 }

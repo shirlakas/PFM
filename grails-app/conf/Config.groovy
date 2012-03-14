@@ -97,3 +97,22 @@ log4j = {
 	
 	info	'grails.app'
 }
+
+//cxf configuration
+
+cxf {
+	installDir ="apache-cxf-2.4.6"
+	
+	client {
+		oslerServiceClient{
+			clientInterface = win_687rhjv6vul._19086.teamworks.webservices.oppod.wfmcoordinationeventservice_tws.WFMCoordinationEventServicePortType //[package and name of wsdl2java -client generated port interface class]
+			wsdl = "http://WIN-687RHJV6VUL:19086/teamworks/webservices/OPPOD/WFMCoordinationEventService.tws?wsdl"
+			serviceEndpointAddress = "http://WIN-687RHJV6VUL:19086/teamworks/webservices/OPPOD/WFMCoordinationEventService.tws"
+			
+			/********************************************** wsdl config ***********************************/
+			client = true    //optional - used to tell wsdl2java to output sample clients, usually not needed - defaults to false
+			outputDir = "src/java" //[location to output generated files] optional - defaults to src/java
+		}
+	}
+}
+
