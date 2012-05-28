@@ -53,7 +53,8 @@
 			<div id="statistics">
 				<g:include controller="arrival" action="getTodayArrivals" />
 				<g:include controller="admission" action="getAdmissionVsDischarge" />
-			</div>
+				<img id ="stats" alt="chart statistics" src="<%=request.getContextPath() %>/images/randy.gif" height="450" width="600" />
+			</div>	
 		</div>
 	</body>
 </html>

@@ -14,7 +14,7 @@
 		<script type="text/javascript" charset="utf-8">
 			/* Data set - can contain whatever information you want */
 			var aDataSet = [
-				['Pa123456','CCU1','In Consultation', '2011-12-12 03:30:00','55'],
+				['Pa123456','CCU1','In Consultation1', '2011-12-12 03:30:00','55'],
 				['Pa123456','CCU1','In Consultation', '2011-12-12 03:30:00','55'],
 				['Pa123456','CCU1','In Consultation', '2011-12-12 03:30:00','55'],
 				['Pa123456','CCU1','In Consultation', '2011-12-12 03:30:00','55'],

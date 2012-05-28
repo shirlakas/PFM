@@ -105,9 +105,22 @@ cxf {
 	
 	client {
 		oslerServiceClient{
+			//clientInterface = fsa4.site.uottawa.ca._7800.soap.registerEvent.MBServerServicePortType
+			//wsdl = "http://fsa4.site.uottawa.ca:7800/soap/registerEvent?wsdl"
+			//serviceEndpointAddress= "http://fsa4.site.uottawa.ca:70/soap/registerEvent"
+			//clientInterface = fsa4.site.uottawa.ca._7800.soap.registerEvent.MBServerServicePortType
+			
 			clientInterface = win_687rhjv6vul._19086.teamworks.webservices.oppod.wfmcoordinationeventservice_tws.WFMCoordinationEventServicePortType //[package and name of wsdl2java -client generated port interface class]
 			wsdl = "http://WIN-687RHJV6VUL:19086/teamworks/webservices/OPPOD/WFMCoordinationEventService.tws?wsdl"
-			serviceEndpointAddress = "http://WIN-687RHJV6VUL:19086/teamworks/webservices/OPPOD/WFMCoordinationEventService.tws"
+			
+			/* Message broker version 8 */
+			serviceEndpointAddress= "http://137.122.88.139:7080/soap/registerEvent-tws"
+			
+			/* Message broker version 7 */
+			//serviceEndpointAddress= "http://fsa4.site.uottawa.ca:7080/soap/registerEvent-tws"
+			
+			/* Lombardi End point  */
+			//serviceEndpointAddress = "http://WIN-687RHJV6VUL:19086/teamworks/webservices/OPPOD/WFMCoordinationEventService.tws"
 			
 			/********************************************** wsdl config ***********************************/
 			client = true    //optional - used to tell wsdl2java to output sample clients, usually not needed - defaults to false
