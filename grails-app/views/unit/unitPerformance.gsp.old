@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<nav:resources/>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		
+		<title>Report</title>
+		<style type="text/css" title="currentStyle">
+			@import "<%=request.getContextPath() %>/css/demo_page.css";
+			@import "<%=request.getContextPath() %>/css/demo_table.css";
+			@import "<%=request.getContextPath() %>/css/jQuery_menu.css";
+		</style>
+
+		<script type="text/javascript" language="javascript" src="<%=request.getContextPath() %>/js/jquery.js"></script>
+		<script type="text/javascript" language="javascript" src="<%=request.getContextPath() %>/js/jquery.dataTables.js"></script>
+		<script type="text/javascript" language="javascript" src="<%=request.getContextPath() %>/js/jquery.tabify.source.js"></script>	
+		<script type="text/javascript" charset="utf-8">
+			/* Data set - can contain whatever information you want */
+			
+			var aDataSet = <%=dataSet%>
+			
+			$(document).ready(function() {
+				$('#dynamic').html( '<table cellpadding="0" cellspacing="0" border="0" class="display" id="example"></table>' );
+				$('#example').dataTable( {
+					"aaData": aDataSet,
+					"aoColumns": [
+						{ "sTitle": "Patient ID", "sClass": "center" },
+<%--						{ "sTitle": "Location", "sClass": "center" },--%>
+						{ "sTitle": "Wait State", "sClass": "center" },
+<%--						{ "sTitle": "Start Time", "sClass": "center","sWidth":"200px" },--%>
+						{ "sTitle": "Duration (minutes)", "sClass": "center","sWidth":"5%" }
+					]
+				} );	
+
+				$('#menutab').tabify();
+			} );
+		</script>
+	</head>
+	<body id="dt_example">
+		<div id="container">
+			<nav:render group="tabs"/>
+			<h1>Report</h1>
+			 <ul id="menutab" class="menu">
+			  <li class="active"><a href="#unit_performance">Unit Performance</a></li> 	
+			 <li><a href="#statistics">Statistic Charts</a></li></ul> 	
+			  <div id="unit_performance">
+				
+			<h2>Unit: <%=unit %> </h2> 
+			<div id="dynamic"> </div> 
+			 </div>
+					<script type="text/javascript" src="https://www.google.com/jsapi"></script>     
+		<script type="text/javascript">    google.load("visualization", "1", {packages:["corechart"]});    google.setOnLoadCallback(drawChart);
+      function drawChart() {
+  // Create and populate the data table.
+  var data = google.visualization.arrayToDataTable([
+                ['State', 'Duration'],
+                [	'TRIAGED'	,	12	]	,
+[	'WAIT_FOR_CONSULTATION1'	,	20	]	,
+[	'IN_CONSULTATION1'	,	8	]	,
+[	'IN_BED_ED'	,	15	]	,
+[	'WAIT_FOR_ORDER_EXECUTION'	,	10	]	,
+[	'WAIT_FOR_CONSULTATION2'	,	20	]	,
+[	'IN_CONSULTATION2'	,	10	]	,
+[	'IN_BED_ED'	,	20	]	,
+[	'WAIT_FOR_BED_CW'	,	180	]	,
+[	'WAIT_FOR_TRANSPORT_CW'	,	5	]	,
+[	'IN_TRANSPORT_CW'	,	5	]	,
+[	'IN_BED_CW'	,	240	]	,
+[	'WAIT_FOR_PROCEDURES'	,	40	]	,
+[	'WAIT_FOR_TRANSPORT_CCL'	,	10	]	,
+[	'IN_TRANSPORT_CCL'	,	5	]	,
+[	'IN_BED_CCL'	,	40	]	,
+[	'IN_PROCEDURE_ANGIOGRAM'	,	45	]	,
+[	'IN_BED_CCL'	,	15	]	,
+[	'IN_PROCEDURE_PCI'	,	80	]	,
+[	'IN_BED_CCL'	,	180	]	,
+[	'WAIT_FOR_TRANSPORT_CW'	,	10	]	,
+[	'IN_TRANSPORT_CW'	,	5	]	,
+[	'IN_BED_CW'	,	600	]	,
+[	'IN_CONSULTATION3'	,	20	]	,
+[	'IN_BED_CW'	,	30	]	,
+[	'WAIT_FOR_DISCHARGE'	,	120	]	,
+[	'DISCHARGED'	,	0	]	
+
+
+   ]);
+
+  // Create and draw the visualization.
+  new google.visualization.BarChart(document.getElementById('chart_arrivals_div')).
+      draw(data,
+           {title:"Average Time Patients Spend in Each Step of the Cardiac Care Process",
+            width:600, height:500,
+            vAxis: {title: "State"},
+            hAxis: {title: "Duration in Minutes"}}
+      );
+}
+
+</script>
+			
+			<div id="statistics">
+				<!--  img id ="stats" alt="chart statistics" src="<%=request.getContextPath() %>/images/randy.gif" height="450" width="600" /> -->
+			  
+				<g:include controller="arrival" action="getTodayArrivals" />
+				<g:include controller="admission" action="getAdmissionVsDischarge" />
+				
+			</div>	
+			<div id="chart_arrivals_div"> </div>
+		</div>
+	</body>
+</html>

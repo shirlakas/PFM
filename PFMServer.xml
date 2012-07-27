@@ -1,0 +1,1849 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="PFMServerServiceService" targetNamespace="http://patientflowmonitoring/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://patientflowmonitoring/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+<xs:schema elementFormDefault="unqualified" targetNamespace="http://patientflowmonitoring/" version="1.0" xmlns:tns="http://patientflowmonitoring/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="bedCleanUpCompleted" type="tns:bedCleanUpCompleted"/>
+<xs:element name="bedCleanUpCompletedResponse" type="tns:bedCleanUpCompletedResponse"/>
+<xs:element name="bedCleanUpRequest" type="tns:bedCleanUpRequest"/>
+<xs:element name="bedCleanUpRequestResponse" type="tns:bedCleanUpRequestResponse"/>
+<xs:element name="bedCleanUpStarted" type="tns:bedCleanUpStarted"/>
+<xs:element name="bedCleanUpStartedResponse" type="tns:bedCleanUpStartedResponse"/>
+<xs:element name="bedRequest" type="tns:bedRequest"/>
+<xs:element name="bedRequestResponse" type="tns:bedRequestResponse"/>
+<xs:element name="consultationCompleted1" type="tns:consultationCompleted1"/>
+<xs:element name="consultationCompleted1Response" type="tns:consultationCompleted1Response"/>
+<xs:element name="consultationCompleted2" type="tns:consultationCompleted2"/>
+<xs:element name="consultationCompleted2Response" type="tns:consultationCompleted2Response"/>
+<xs:element name="consultationCompleted3" type="tns:consultationCompleted3"/>
+<xs:element name="consultationCompleted3Response" type="tns:consultationCompleted3Response"/>
+<xs:element name="consultationStarted1" type="tns:consultationStarted1"/>
+<xs:element name="consultationStarted1Response" type="tns:consultationStarted1Response"/>
+<xs:element name="consultationStarted2" type="tns:consultationStarted2"/>
+<xs:element name="consultationStarted2Response" type="tns:consultationStarted2Response"/>
+<xs:element name="consultationStarted3" type="tns:consultationStarted3"/>
+<xs:element name="consultationStarted3Response" type="tns:consultationStarted3Response"/>
+<xs:element name="dischargeCompleted" type="tns:dischargeCompleted"/>
+<xs:element name="dischargeCompletedResponse" type="tns:dischargeCompletedResponse"/>
+<xs:element name="dischargeRequest" type="tns:dischargeRequest"/>
+<xs:element name="dischargeRequestResponse" type="tns:dischargeRequestResponse"/>
+<xs:element name="houseKeepingInCW" type="tns:houseKeepingInCW"/>
+<xs:element name="houseKeepingInCWResponse" type="tns:houseKeepingInCWResponse"/>
+<xs:element name="houseKeepingOutCW" type="tns:houseKeepingOutCW"/>
+<xs:element name="houseKeepingOutCWResponse" type="tns:houseKeepingOutCWResponse"/>
+<xs:element name="orderRequest" type="tns:orderRequest"/>
+<xs:element name="orderRequestCompleted" type="tns:orderRequestCompleted"/>
+<xs:element name="orderRequestCompletedResponse" type="tns:orderRequestCompletedResponse"/>
+<xs:element name="orderRequestResponse" type="tns:orderRequestResponse"/>
+<xs:element name="ordersExecutionCompleted" type="tns:ordersExecutionCompleted"/>
+<xs:element name="ordersExecutionCompletedResponse" type="tns:ordersExecutionCompletedResponse"/>
+<xs:element name="patientAdmittedWithBed" type="tns:patientAdmittedWithBed"/>
+<xs:element name="patientAdmittedWithBedResponse" type="tns:patientAdmittedWithBedResponse"/>
+<xs:element name="patientAdmittedWithNoBed" type="tns:patientAdmittedWithNoBed"/>
+<xs:element name="patientAdmittedWithNoBedResponse" type="tns:patientAdmittedWithNoBedResponse"/>
+<xs:element name="patientArrivedInBed" type="tns:patientArrivedInBed"/>
+<xs:element name="patientArrivedInBedResponse" type="tns:patientArrivedInBedResponse"/>
+<xs:element name="patientInCCL" type="tns:patientInCCL"/>
+<xs:element name="patientInCCLResponse" type="tns:patientInCCLResponse"/>
+<xs:element name="patientInCW" type="tns:patientInCW"/>
+<xs:element name="patientInCWResponse" type="tns:patientInCWResponse"/>
+<xs:element name="patientInED" type="tns:patientInED"/>
+<xs:element name="patientInEDResponse" type="tns:patientInEDResponse"/>
+<xs:element name="patientOutCCL" type="tns:patientOutCCL"/>
+<xs:element name="patientOutCCLResponse" type="tns:patientOutCCLResponse"/>
+<xs:element name="patientOutCW" type="tns:patientOutCW"/>
+<xs:element name="patientOutCWResponse" type="tns:patientOutCWResponse"/>
+<xs:element name="patientOutED" type="tns:patientOutED"/>
+<xs:element name="patientOutEDResponse" type="tns:patientOutEDResponse"/>
+<xs:element name="patientRegistered" type="tns:patientRegistered"/>
+<xs:element name="patientRegisteredResponse" type="tns:patientRegisteredResponse"/>
+<xs:element name="patientTransportRequest" type="tns:patientTransportRequest"/>
+<xs:element name="patientTransportRequestResponse" type="tns:patientTransportRequestResponse"/>
+<xs:element name="patientTransportStarted" type="tns:patientTransportStarted"/>
+<xs:element name="patientTransportStartedResponse" type="tns:patientTransportStartedResponse"/>
+<xs:element name="physicianInCW" type="tns:physicianInCW"/>
+<xs:element name="physicianInCWResponse" type="tns:physicianInCWResponse"/>
+<xs:element name="physicianInED" type="tns:physicianInED"/>
+<xs:element name="physicianInEDResponse" type="tns:physicianInEDResponse"/>
+<xs:element name="physicianOutCW" type="tns:physicianOutCW"/>
+<xs:element name="physicianOutCWResponse" type="tns:physicianOutCWResponse"/>
+<xs:element name="physicianOutED" type="tns:physicianOutED"/>
+<xs:element name="physicianOutEDResponse" type="tns:physicianOutEDResponse"/>
+<xs:element name="ping" type="tns:ping"/>
+<xs:element name="pingResponse" type="tns:pingResponse"/>
+<xs:element name="procedureCompleted" type="tns:procedureCompleted"/>
+<xs:element name="procedureCompletedResponse" type="tns:procedureCompletedResponse"/>
+<xs:element name="procedureStarted" type="tns:procedureStarted"/>
+<xs:element name="procedureStartedResponse" type="tns:procedureStartedResponse"/>
+<xs:element name="procedureUpdated" type="tns:procedureUpdated"/>
+<xs:element name="procedureUpdatedResponse" type="tns:procedureUpdatedResponse"/>
+<xs:element name="proceduresExecutionCompleted" type="tns:proceduresExecutionCompleted"/>
+<xs:element name="proceduresExecutionCompletedResponse" type="tns:proceduresExecutionCompletedResponse"/>
+<xs:element name="proceduresScheduled" type="tns:proceduresScheduled"/>
+<xs:element name="proceduresScheduledResponse" type="tns:proceduresScheduledResponse"/>
+<xs:element name="requestReferral" type="tns:requestReferral"/>
+<xs:element name="requestReferralResponse" type="tns:requestReferralResponse"/>
+<xs:element name="triageScore" type="tns:triageScore"/>
+<xs:element name="triageScoreResponse" type="tns:triageScoreResponse"/>
+<xs:element name="waitForBed" type="tns:waitForBed"/>
+<xs:element name="waitForBedCleanUp" type="tns:waitForBedCleanUp"/>
+<xs:element name="waitForBedCleanUpResponse" type="tns:waitForBedCleanUpResponse"/>
+<xs:element name="waitForBedResponse" type="tns:waitForBedResponse"/>
+<xs:element name="waitForConsultation1" type="tns:waitForConsultation1"/>
+<xs:element name="waitForConsultation1Response" type="tns:waitForConsultation1Response"/>
+<xs:element name="waitForConsultation2" type="tns:waitForConsultation2"/>
+<xs:element name="waitForConsultation2Response" type="tns:waitForConsultation2Response"/>
+<xs:element name="waitForDischarge" type="tns:waitForDischarge"/>
+<xs:element name="waitForDischargeResponse" type="tns:waitForDischargeResponse"/>
+<xs:element name="waitForOrderExecution" type="tns:waitForOrderExecution"/>
+<xs:element name="waitForOrderExecutionResponse" type="tns:waitForOrderExecutionResponse"/>
+<xs:element name="waitForProcedures" type="tns:waitForProcedures"/>
+<xs:element name="waitForProceduresResponse" type="tns:waitForProceduresResponse"/>
+<xs:element name="waitForTransport" type="tns:waitForTransport"/>
+<xs:element name="waitForTransportResponse" type="tns:waitForTransportResponse"/>
+<xs:complexType name="patientRegistered">
+<xs:sequence>
+<xs:element minOccurs="0" name="patientId" type="xs:string"/>
+<xs:element minOccurs="0" name="roomId" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="patientRegisteredResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="PatientRegisteredResponse" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="requestReferral">
+<xs:sequence>
+<xs:element minOccurs="0" name="patientId" type="xs:string"/>
+<xs:element minOccurs="0" name="providerId" type="xs:string"/>
+<xs:element minOccurs="0" name="referralType" type="xs:string"/>
+<xs:element minOccurs="0" name="unitId" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="requestReferralResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="RequestReferralResponse" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="waitForProcedures">
+<xs:sequence>
+<xs:element minOccurs="0" name="patientId" type="xs:string"/>
+<xs:element minOccurs="0" name="unitId" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="waitForProceduresResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="WaitForProceduresResponse" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="dischargeCompleted">
+<xs:sequence>
+<xs:element minOccurs="0" name="patientId" type="xs:string"/>
+<xs:element minOccurs="0" name="unitId" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="dischargeCompletedResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="DischargeCompletedResponse" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="patientAdmittedWithBed">
+<xs:sequence>
+<xs:element minOccurs="0" name="patientId" type="xs:string"/>
+<xs:element minOccurs="0" name="unitId" type="xs:string"/>
+<xs:element minOccurs="0" name="locationId" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="patientAdmittedWithBedResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="PatientAdmittedWithBedResponse" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="consultationCompleted2">
+<xs:sequence>
+<xs:element minOccurs="0" name="patientId" type="xs:string"/>
+<xs:element minOccurs="0" name="physicianId" type="xs:string"/>
+<xs:element minOccurs="0" name="locationId" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="consultationCompleted2Response">
+<xs:sequence>
+<xs:element minOccurs="0" name="ConsultationCompleted2Response" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="patientInCW">
+<xs:sequence>
+<xs:element minOccurs="0" name="patientId" type="xs:string"/>
+<xs:element minOccurs="0" name="locationId" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="patientInCWResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="PatientInCWResponse" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="consultationStarted1">
+<xs:sequence>
+<xs:element minOccurs="0" name="patientId" type="xs:string"/>
+<xs:element minOccurs="0" name="physicianId" type="xs:string"/>
+<xs:element minOccurs="0" name="locationId" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="consultationStarted1Response">
+<xs:sequence>
+<xs:element minOccurs="0" name="ConsultationStarted1Response" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="physicianInCW">
+<xs:sequence>
+<xs:element minOccurs="0" name="physicianId" type="xs:string"/>
+<xs:element minOccurs="0" name="locationId" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="physicianInCWResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="PhysicianInCWResponse" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="patientOutCCL">
+<xs:sequence>
+<xs:element minOccurs="0" name="patientId" type="xs:string"/>
+<xs:element minOccurs="0" name="locationId" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="patientOutCCLResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="PatientOutCCLResponse" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="procedureStarted">
+<xs:sequence>
+<xs:element minOccurs="0" name="patientId" type="xs:string"/>
+<xs:element minOccurs="0" name="providerId" type="xs:string"/>
+<xs:element minOccurs="0" name="procedureType" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="procedureStartedResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="ProcedureStartedResponse" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="procedureUpdated">
+<xs:sequence>
+<xs:element minOccurs="0" name="patientId" type="xs:string"/>
+<xs:element minOccurs="0" name="procedureType" type="xs:string"/>
+<xs:element minOccurs="0" name="status" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="procedureUpdatedResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="ProcedureUpdatedResponse" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="consultationCompleted1">
+<xs:sequence>
+<xs:element minOccurs="0" name="patientId" type="xs:string"/>
+<xs:element minOccurs="0" name="physicianId" type="xs:string"/>
+<xs:element minOccurs="0" name="locationId" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="consultationCompleted1Response">
+<xs:sequence>
+<xs:element minOccurs="0" name="ConsultationCompleted1Response" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="waitForTransport">
+<xs:sequence>
+<xs:element minOccurs="0" name="patientId" type="xs:string"/>
+<xs:element minOccurs="0" name="unitId" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="waitForTransportResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="WaitForTransportResponse" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="patientInED">
+<xs:sequence>
+<xs:element minOccurs="0" name="patientId" type="xs:string"/>
+<xs:element minOccurs="0" name="locationId" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="patientInEDResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="PatientInEDResponse" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="ordersExecutionCompleted">
+<xs:sequence>
+<xs:element minOccurs="0" name="patientId" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="ordersExecutionCompletedResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="OrdersExecutionCompletedResponse" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="physicianInED">
+<xs:sequence>
+<xs:element minOccurs="0" name="physicianId" type="xs:string"/>
+<xs:element minOccurs="0" name="locationId" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="physicianInEDResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="PhysicianInEDResponse" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="ping">
+<xs:sequence>
+<xs:element minOccurs="0" name="message" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="pingResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="pingResponse" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="waitForOrderExecution">
+<xs:sequence>
+<xs:element minOccurs="0" name="patientId" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="waitForOrderExecutionResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="WaitForOrderExecutionResponse" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="patientOutED">
+<xs:sequence>
+<xs:element minOccurs="0" name="patientId" type="xs:string"/>
+<xs:element minOccurs="0" name="locationId" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="patientOutEDResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="PatientOutEDResponse" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="patientTransportRequest">
+<xs:sequence>
+<xs:element minOccurs="0" name="patientId" type="xs:string"/>
+<xs:element minOccurs="0" name="providerId" type="xs:string"/>
+<xs:element minOccurs="0" name="unitId" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="patientTransportRequestResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="PatientTransportRequestResponse" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="proceduresExecutionCompleted">
+<xs:sequence>
+<xs:element minOccurs="0" name="patientId" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="proceduresExecutionCompletedResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="ProceduresExecutionCompletedResponse" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="procedureCompleted">
+<xs:sequence>
+<xs:element minOccurs="0" name="patientId" type="xs:string"/>
+<xs:element minOccurs="0" name="providerId" type="xs:string"/>
+<xs:element minOccurs="0" name="procedureType" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="procedureCompletedResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="ProcedureCompletedResponse" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="consultationStarted2">
+<xs:sequence>
+<xs:element minOccurs="0" name="patientId" type="xs:string"/>
+<xs:element minOccurs="0" name="physicianId" type="xs:string"/>
+<xs:element minOccurs="0" name="locationId" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="consultationStarted2Response">
+<xs:sequence>
+<xs:element minOccurs="0" name="ConsultationStarted2Response" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="patientOutCW">
+<xs:sequence>
+<xs:element minOccurs="0" name="patientId" type="xs:string"/>
+<xs:element minOccurs="0" name="locationId" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="patientOutCWResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="PatientOutCWResponse" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="consultationStarted3">
+<xs:sequence>
+<xs:element minOccurs="0" name="patientId" type="xs:string"/>
+<xs:element minOccurs="0" name="physicianId" type="xs:string"/>
+<xs:element minOccurs="0" name="locationId" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="consultationStarted3Response">
+<xs:sequence>
+<xs:element minOccurs="0" name="ConsultationStarted3Response" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="waitForConsultation2">
+<xs:sequence>
+<xs:element minOccurs="0" name="patientId" type="xs:string"/>
+<xs:element minOccurs="0" name="locationId" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="waitForConsultation2Response">
+<xs:sequence>
+<xs:element minOccurs="0" name="WaitForConsultation2Response" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="bedRequest">
+<xs:sequence>
+<xs:element minOccurs="0" name="patientId" type="xs:string"/>
+<xs:element minOccurs="0" name="providerId" type="xs:string"/>
+<xs:element minOccurs="0" name="unitId" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="bedRequestResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="BedRequestResponse" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="waitForConsultation1">
+<xs:sequence>
+<xs:element minOccurs="0" name="patientId" type="xs:string"/>
+<xs:element minOccurs="0" name="locationId" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="waitForConsultation1Response">
+<xs:sequence>
+<xs:element minOccurs="0" name="WaitForConsultation1Response" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="patientInCCL">
+<xs:sequence>
+<xs:element minOccurs="0" name="patientId" type="xs:string"/>
+<xs:element minOccurs="0" name="locationId" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="patientInCCLResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="PatientInCCLResponse" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="physicianOutCW">
+<xs:sequence>
+<xs:element minOccurs="0" name="physicianId" type="xs:string"/>
+<xs:element minOccurs="0" name="locationId" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="physicianOutCWResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="PhysicianOutCWResponse" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="bedCleanUpRequest">
+<xs:sequence>
+<xs:element minOccurs="0" name="locationId" type="xs:string"/>
+<xs:element minOccurs="0" name="unitId" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="bedCleanUpRequestResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="BedCleanUpRequestResponse" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="bedCleanUpStarted">
+<xs:sequence>
+<xs:element minOccurs="0" name="providerId" type="xs:string"/>
+<xs:element minOccurs="0" name="locationId" type="xs:string"/>
+<xs:element minOccurs="0" name="unitId" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="bedCleanUpStartedResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="BedCleanUpStartedResponse" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="bedCleanUpCompleted">
+<xs:sequence>
+<xs:element minOccurs="0" name="providerId" type="xs:string"/>
+<xs:element minOccurs="0" name="locationId" type="xs:string"/>
+<xs:element minOccurs="0" name="unitId" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="bedCleanUpCompletedResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="BedCleanUpCompletedResponse" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="patientTransportStarted">
+<xs:sequence>
+<xs:element minOccurs="0" name="patientId" type="xs:string"/>
+<xs:element minOccurs="0" name="unitId" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="patientTransportStartedResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="PatientTransportStartedResponse" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="patientArrivedInBed">
+<xs:sequence>
+<xs:element minOccurs="0" name="patientId" type="xs:string"/>
+<xs:element minOccurs="0" name="unitId" type="xs:string"/>
+<xs:element minOccurs="0" name="locationId" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="patientArrivedInBedResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="PatientArrivedInBedResponse" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="waitForBed">
+<xs:sequence>
+<xs:element minOccurs="0" name="patientId" type="xs:string"/>
+<xs:element minOccurs="0" name="unitId" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="waitForBedResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="WaitForBedResponse" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="waitForBedCleanUp">
+<xs:sequence>
+<xs:element minOccurs="0" name="locationId" type="xs:string"/>
+<xs:element minOccurs="0" name="unitId" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="waitForBedCleanUpResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="WaitForBedCleanUpResponse" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="consultationCompleted3">
+<xs:sequence>
+<xs:element minOccurs="0" name="patientId" type="xs:string"/>
+<xs:element minOccurs="0" name="physicianId" type="xs:string"/>
+<xs:element minOccurs="0" name="locationId" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="consultationCompleted3Response">
+<xs:sequence>
+<xs:element minOccurs="0" name="ConsultationCompleted3Response" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="triageScore">
+<xs:sequence>
+<xs:element minOccurs="0" name="patientId" type="xs:string"/>
+<xs:element minOccurs="0" name="providerId" type="xs:string"/>
+<xs:element minOccurs="0" name="ctas" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="triageScoreResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="triageScoreResponse" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="proceduresScheduled">
+<xs:sequence>
+<xs:element minOccurs="0" name="patientId" type="xs:string"/>
+<xs:element minOccurs="0" name="procedureScheduledTime" type="xs:string"/>
+<xs:element minOccurs="0" name="unitId" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="proceduresScheduledResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="ProceduresScheduledResponse" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="orderRequestCompleted">
+<xs:sequence>
+<xs:element minOccurs="0" name="patientId" type="xs:string"/>
+<xs:element minOccurs="0" name="providerId" type="xs:string"/>
+<xs:element minOccurs="0" name="orderType" type="xs:string"/>
+<xs:element minOccurs="0" name="orderId" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="orderRequestCompletedResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="OrderRequestCompletedResponse" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="orderRequest">
+<xs:sequence>
+<xs:element minOccurs="0" name="patientId" type="xs:string"/>
+<xs:element minOccurs="0" name="providerId" type="xs:string"/>
+<xs:element minOccurs="0" name="orderType" type="xs:string"/>
+<xs:element minOccurs="0" name="orderId" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="orderRequestResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="OrderRequestResponse" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="dischargeRequest">
+<xs:sequence>
+<xs:element minOccurs="0" name="patientId" type="xs:string"/>
+<xs:element minOccurs="0" name="providerId" type="xs:string"/>
+<xs:element minOccurs="0" name="unitId" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="dischargeRequestResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="DischargeRequestResponse" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="patientAdmittedWithNoBed">
+<xs:sequence>
+<xs:element minOccurs="0" name="patientId" type="xs:string"/>
+<xs:element minOccurs="0" name="unitId" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="patientAdmittedWithNoBedResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="PatientAdmittedWithNoBedResponse" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="houseKeepingInCW">
+<xs:sequence>
+<xs:element minOccurs="0" name="houseKeepingId" type="xs:string"/>
+<xs:element minOccurs="0" name="locationId" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="houseKeepingInCWResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="HouseKeepingnInCWResponse" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="houseKeepingOutCW">
+<xs:sequence>
+<xs:element minOccurs="0" name="houseKeepingId" type="xs:string"/>
+<xs:element minOccurs="0" name="locationId" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="houseKeepingOutCWResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="HouseKeepingOutCWResponse" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="waitForDischarge">
+<xs:sequence>
+<xs:element minOccurs="0" name="patientId" type="xs:string"/>
+<xs:element minOccurs="0" name="unitId" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="waitForDischargeResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="WaitForDischargeResponse" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="physicianOutED">
+<xs:sequence>
+<xs:element minOccurs="0" name="physicianId" type="xs:string"/>
+<xs:element minOccurs="0" name="locationId" type="xs:string"/>
+<xs:element minOccurs="0" name="timestamp" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="physicianOutEDResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="PhysicianOutEDResponse" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="patientRegistered">
+    <wsdl:part element="tns:patientRegistered" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="patientRegisteredResponse">
+    <wsdl:part element="tns:patientRegisteredResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="patientTransportRequestResponse">
+    <wsdl:part element="tns:patientTransportRequestResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="proceduresScheduled">
+    <wsdl:part element="tns:proceduresScheduled" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="procedureStartedResponse">
+    <wsdl:part element="tns:procedureStartedResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="proceduresScheduledResponse">
+    <wsdl:part element="tns:proceduresScheduledResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="waitForTransport">
+    <wsdl:part element="tns:waitForTransport" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="patientTransportRequest">
+    <wsdl:part element="tns:patientTransportRequest" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="bedRequest">
+    <wsdl:part element="tns:bedRequest" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="patientOutCCL">
+    <wsdl:part element="tns:patientOutCCL" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="bedCleanUpRequestResponse">
+    <wsdl:part element="tns:bedCleanUpRequestResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="bedCleanUpCompleted">
+    <wsdl:part element="tns:bedCleanUpCompleted" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="patientInCCLResponse">
+    <wsdl:part element="tns:patientInCCLResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="waitForConsultation2Response">
+    <wsdl:part element="tns:waitForConsultation2Response" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="houseKeepingInCW">
+    <wsdl:part element="tns:houseKeepingInCW" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="houseKeepingInCWResponse">
+    <wsdl:part element="tns:houseKeepingInCWResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultationStarted2Response">
+    <wsdl:part element="tns:consultationStarted2Response" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="patientInCWResponse">
+    <wsdl:part element="tns:patientInCWResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="physicianOutED">
+    <wsdl:part element="tns:physicianOutED" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="orderRequestCompleted">
+    <wsdl:part element="tns:orderRequestCompleted" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="requestReferralResponse">
+    <wsdl:part element="tns:requestReferralResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="waitForProcedures">
+    <wsdl:part element="tns:waitForProcedures" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="waitForTransportResponse">
+    <wsdl:part element="tns:waitForTransportResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="patientOutEDResponse">
+    <wsdl:part element="tns:patientOutEDResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="patientArrivedInBed">
+    <wsdl:part element="tns:patientArrivedInBed" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="waitForOrderExecution">
+    <wsdl:part element="tns:waitForOrderExecution" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="patientAdmittedWithBed">
+    <wsdl:part element="tns:patientAdmittedWithBed" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="waitForBedCleanUpResponse">
+    <wsdl:part element="tns:waitForBedCleanUpResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="triageScore">
+    <wsdl:part element="tns:triageScore" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="procedureUpdatedResponse">
+    <wsdl:part element="tns:procedureUpdatedResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="dischargeCompleted">
+    <wsdl:part element="tns:dischargeCompleted" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="physicianOutCW">
+    <wsdl:part element="tns:physicianOutCW" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="waitForConsultation1Response">
+    <wsdl:part element="tns:waitForConsultation1Response" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="patientAdmittedWithNoBed">
+    <wsdl:part element="tns:patientAdmittedWithNoBed" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="houseKeepingOutCW">
+    <wsdl:part element="tns:houseKeepingOutCW" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="patientInED">
+    <wsdl:part element="tns:patientInED" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="patientArrivedInBedResponse">
+    <wsdl:part element="tns:patientArrivedInBedResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="proceduresExecutionCompletedResponse">
+    <wsdl:part element="tns:proceduresExecutionCompletedResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultationCompleted1Response">
+    <wsdl:part element="tns:consultationCompleted1Response" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultationCompleted3">
+    <wsdl:part element="tns:consultationCompleted3" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="patientAdmittedWithNoBedResponse">
+    <wsdl:part element="tns:patientAdmittedWithNoBedResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultationCompleted2">
+    <wsdl:part element="tns:consultationCompleted2" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="bedRequestResponse">
+    <wsdl:part element="tns:bedRequestResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="physicianInCWResponse">
+    <wsdl:part element="tns:physicianInCWResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="bedCleanUpCompletedResponse">
+    <wsdl:part element="tns:bedCleanUpCompletedResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultationCompleted3Response">
+    <wsdl:part element="tns:consultationCompleted3Response" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultationCompleted2Response">
+    <wsdl:part element="tns:consultationCompleted2Response" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="patientAdmittedWithBedResponse">
+    <wsdl:part element="tns:patientAdmittedWithBedResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultationStarted1Response">
+    <wsdl:part element="tns:consultationStarted1Response" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultationCompleted1">
+    <wsdl:part element="tns:consultationCompleted1" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="dischargeCompletedResponse">
+    <wsdl:part element="tns:dischargeCompletedResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultationStarted3Response">
+    <wsdl:part element="tns:consultationStarted3Response" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="bedCleanUpRequest">
+    <wsdl:part element="tns:bedCleanUpRequest" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="procedureStarted">
+    <wsdl:part element="tns:procedureStarted" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="waitForDischarge">
+    <wsdl:part element="tns:waitForDischarge" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="procedureCompleted">
+    <wsdl:part element="tns:procedureCompleted" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="physicianInED">
+    <wsdl:part element="tns:physicianInED" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="procedureUpdated">
+    <wsdl:part element="tns:procedureUpdated" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="waitForOrderExecutionResponse">
+    <wsdl:part element="tns:waitForOrderExecutionResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ordersExecutionCompleted">
+    <wsdl:part element="tns:ordersExecutionCompleted" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultationStarted1">
+    <wsdl:part element="tns:consultationStarted1" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultationStarted2">
+    <wsdl:part element="tns:consultationStarted2" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultationStarted3">
+    <wsdl:part element="tns:consultationStarted3" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="waitForDischargeResponse">
+    <wsdl:part element="tns:waitForDischargeResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="dischargeRequestResponse">
+    <wsdl:part element="tns:dischargeRequestResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="orderRequestCompletedResponse">
+    <wsdl:part element="tns:orderRequestCompletedResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="waitForBedResponse">
+    <wsdl:part element="tns:waitForBedResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="requestReferral">
+    <wsdl:part element="tns:requestReferral" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="waitForBed">
+    <wsdl:part element="tns:waitForBed" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="patientInCW">
+    <wsdl:part element="tns:patientInCW" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="waitForConsultation2">
+    <wsdl:part element="tns:waitForConsultation2" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="waitForConsultation1">
+    <wsdl:part element="tns:waitForConsultation1" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="patientOutCW">
+    <wsdl:part element="tns:patientOutCW" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="pingResponse">
+    <wsdl:part element="tns:pingResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="patientTransportStarted">
+    <wsdl:part element="tns:patientTransportStarted" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="procedureCompletedResponse">
+    <wsdl:part element="tns:procedureCompletedResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="physicianInEDResponse">
+    <wsdl:part element="tns:physicianInEDResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="bedCleanUpStartedResponse">
+    <wsdl:part element="tns:bedCleanUpStartedResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="physicianInCW">
+    <wsdl:part element="tns:physicianInCW" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="dischargeRequest">
+    <wsdl:part element="tns:dischargeRequest" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="patientInCCL">
+    <wsdl:part element="tns:patientInCCL" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ping">
+    <wsdl:part element="tns:ping" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="waitForBedCleanUp">
+    <wsdl:part element="tns:waitForBedCleanUp" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="physicianOutCWResponse">
+    <wsdl:part element="tns:physicianOutCWResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="triageScoreResponse">
+    <wsdl:part element="tns:triageScoreResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="proceduresExecutionCompleted">
+    <wsdl:part element="tns:proceduresExecutionCompleted" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="waitForProceduresResponse">
+    <wsdl:part element="tns:waitForProceduresResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="orderRequestResponse">
+    <wsdl:part element="tns:orderRequestResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="orderRequest">
+    <wsdl:part element="tns:orderRequest" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="bedCleanUpStarted">
+    <wsdl:part element="tns:bedCleanUpStarted" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="patientOutED">
+    <wsdl:part element="tns:patientOutED" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="patientInEDResponse">
+    <wsdl:part element="tns:patientInEDResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ordersExecutionCompletedResponse">
+    <wsdl:part element="tns:ordersExecutionCompletedResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="physicianOutEDResponse">
+    <wsdl:part element="tns:physicianOutEDResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="houseKeepingOutCWResponse">
+    <wsdl:part element="tns:houseKeepingOutCWResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="patientOutCWResponse">
+    <wsdl:part element="tns:patientOutCWResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="patientOutCCLResponse">
+    <wsdl:part element="tns:patientOutCCLResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="patientTransportStartedResponse">
+    <wsdl:part element="tns:patientTransportStartedResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="PFMServerService">
+    <wsdl:operation name="patientRegistered">
+      <wsdl:input message="tns:patientRegistered" name="patientRegistered">
+    </wsdl:input>
+      <wsdl:output message="tns:patientRegisteredResponse" name="patientRegisteredResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="requestReferral">
+      <wsdl:input message="tns:requestReferral" name="requestReferral">
+    </wsdl:input>
+      <wsdl:output message="tns:requestReferralResponse" name="requestReferralResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="waitForProcedures">
+      <wsdl:input message="tns:waitForProcedures" name="waitForProcedures">
+    </wsdl:input>
+      <wsdl:output message="tns:waitForProceduresResponse" name="waitForProceduresResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dischargeCompleted">
+      <wsdl:input message="tns:dischargeCompleted" name="dischargeCompleted">
+    </wsdl:input>
+      <wsdl:output message="tns:dischargeCompletedResponse" name="dischargeCompletedResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="patientAdmittedWithBed">
+      <wsdl:input message="tns:patientAdmittedWithBed" name="patientAdmittedWithBed">
+    </wsdl:input>
+      <wsdl:output message="tns:patientAdmittedWithBedResponse" name="patientAdmittedWithBedResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultationCompleted2">
+      <wsdl:input message="tns:consultationCompleted2" name="consultationCompleted2">
+    </wsdl:input>
+      <wsdl:output message="tns:consultationCompleted2Response" name="consultationCompleted2Response">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="patientInCW">
+      <wsdl:input message="tns:patientInCW" name="patientInCW">
+    </wsdl:input>
+      <wsdl:output message="tns:patientInCWResponse" name="patientInCWResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultationStarted1">
+      <wsdl:input message="tns:consultationStarted1" name="consultationStarted1">
+    </wsdl:input>
+      <wsdl:output message="tns:consultationStarted1Response" name="consultationStarted1Response">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="physicianInCW">
+      <wsdl:input message="tns:physicianInCW" name="physicianInCW">
+    </wsdl:input>
+      <wsdl:output message="tns:physicianInCWResponse" name="physicianInCWResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="patientOutCCL">
+      <wsdl:input message="tns:patientOutCCL" name="patientOutCCL">
+    </wsdl:input>
+      <wsdl:output message="tns:patientOutCCLResponse" name="patientOutCCLResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="procedureStarted">
+      <wsdl:input message="tns:procedureStarted" name="procedureStarted">
+    </wsdl:input>
+      <wsdl:output message="tns:procedureStartedResponse" name="procedureStartedResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="procedureUpdated">
+      <wsdl:input message="tns:procedureUpdated" name="procedureUpdated">
+    </wsdl:input>
+      <wsdl:output message="tns:procedureUpdatedResponse" name="procedureUpdatedResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultationCompleted1">
+      <wsdl:input message="tns:consultationCompleted1" name="consultationCompleted1">
+    </wsdl:input>
+      <wsdl:output message="tns:consultationCompleted1Response" name="consultationCompleted1Response">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="waitForTransport">
+      <wsdl:input message="tns:waitForTransport" name="waitForTransport">
+    </wsdl:input>
+      <wsdl:output message="tns:waitForTransportResponse" name="waitForTransportResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="patientInED">
+      <wsdl:input message="tns:patientInED" name="patientInED">
+    </wsdl:input>
+      <wsdl:output message="tns:patientInEDResponse" name="patientInEDResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ordersExecutionCompleted">
+      <wsdl:input message="tns:ordersExecutionCompleted" name="ordersExecutionCompleted">
+    </wsdl:input>
+      <wsdl:output message="tns:ordersExecutionCompletedResponse" name="ordersExecutionCompletedResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="physicianInED">
+      <wsdl:input message="tns:physicianInED" name="physicianInED">
+    </wsdl:input>
+      <wsdl:output message="tns:physicianInEDResponse" name="physicianInEDResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ping">
+      <wsdl:input message="tns:ping" name="ping">
+    </wsdl:input>
+      <wsdl:output message="tns:pingResponse" name="pingResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="waitForOrderExecution">
+      <wsdl:input message="tns:waitForOrderExecution" name="waitForOrderExecution">
+    </wsdl:input>
+      <wsdl:output message="tns:waitForOrderExecutionResponse" name="waitForOrderExecutionResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="patientOutED">
+      <wsdl:input message="tns:patientOutED" name="patientOutED">
+    </wsdl:input>
+      <wsdl:output message="tns:patientOutEDResponse" name="patientOutEDResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="patientTransportRequest">
+      <wsdl:input message="tns:patientTransportRequest" name="patientTransportRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:patientTransportRequestResponse" name="patientTransportRequestResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="proceduresExecutionCompleted">
+      <wsdl:input message="tns:proceduresExecutionCompleted" name="proceduresExecutionCompleted">
+    </wsdl:input>
+      <wsdl:output message="tns:proceduresExecutionCompletedResponse" name="proceduresExecutionCompletedResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="procedureCompleted">
+      <wsdl:input message="tns:procedureCompleted" name="procedureCompleted">
+    </wsdl:input>
+      <wsdl:output message="tns:procedureCompletedResponse" name="procedureCompletedResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultationStarted2">
+      <wsdl:input message="tns:consultationStarted2" name="consultationStarted2">
+    </wsdl:input>
+      <wsdl:output message="tns:consultationStarted2Response" name="consultationStarted2Response">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="patientOutCW">
+      <wsdl:input message="tns:patientOutCW" name="patientOutCW">
+    </wsdl:input>
+      <wsdl:output message="tns:patientOutCWResponse" name="patientOutCWResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultationStarted3">
+      <wsdl:input message="tns:consultationStarted3" name="consultationStarted3">
+    </wsdl:input>
+      <wsdl:output message="tns:consultationStarted3Response" name="consultationStarted3Response">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="waitForConsultation2">
+      <wsdl:input message="tns:waitForConsultation2" name="waitForConsultation2">
+    </wsdl:input>
+      <wsdl:output message="tns:waitForConsultation2Response" name="waitForConsultation2Response">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="bedRequest">
+      <wsdl:input message="tns:bedRequest" name="bedRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:bedRequestResponse" name="bedRequestResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="waitForConsultation1">
+      <wsdl:input message="tns:waitForConsultation1" name="waitForConsultation1">
+    </wsdl:input>
+      <wsdl:output message="tns:waitForConsultation1Response" name="waitForConsultation1Response">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="patientInCCL">
+      <wsdl:input message="tns:patientInCCL" name="patientInCCL">
+    </wsdl:input>
+      <wsdl:output message="tns:patientInCCLResponse" name="patientInCCLResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="physicianOutCW">
+      <wsdl:input message="tns:physicianOutCW" name="physicianOutCW">
+    </wsdl:input>
+      <wsdl:output message="tns:physicianOutCWResponse" name="physicianOutCWResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="bedCleanUpRequest">
+      <wsdl:input message="tns:bedCleanUpRequest" name="bedCleanUpRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:bedCleanUpRequestResponse" name="bedCleanUpRequestResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="bedCleanUpStarted">
+      <wsdl:input message="tns:bedCleanUpStarted" name="bedCleanUpStarted">
+    </wsdl:input>
+      <wsdl:output message="tns:bedCleanUpStartedResponse" name="bedCleanUpStartedResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="bedCleanUpCompleted">
+      <wsdl:input message="tns:bedCleanUpCompleted" name="bedCleanUpCompleted">
+    </wsdl:input>
+      <wsdl:output message="tns:bedCleanUpCompletedResponse" name="bedCleanUpCompletedResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="patientTransportStarted">
+      <wsdl:input message="tns:patientTransportStarted" name="patientTransportStarted">
+    </wsdl:input>
+      <wsdl:output message="tns:patientTransportStartedResponse" name="patientTransportStartedResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="patientArrivedInBed">
+      <wsdl:input message="tns:patientArrivedInBed" name="patientArrivedInBed">
+    </wsdl:input>
+      <wsdl:output message="tns:patientArrivedInBedResponse" name="patientArrivedInBedResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="waitForBed">
+      <wsdl:input message="tns:waitForBed" name="waitForBed">
+    </wsdl:input>
+      <wsdl:output message="tns:waitForBedResponse" name="waitForBedResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="waitForBedCleanUp">
+      <wsdl:input message="tns:waitForBedCleanUp" name="waitForBedCleanUp">
+    </wsdl:input>
+      <wsdl:output message="tns:waitForBedCleanUpResponse" name="waitForBedCleanUpResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultationCompleted3">
+      <wsdl:input message="tns:consultationCompleted3" name="consultationCompleted3">
+    </wsdl:input>
+      <wsdl:output message="tns:consultationCompleted3Response" name="consultationCompleted3Response">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="triageScore">
+      <wsdl:input message="tns:triageScore" name="triageScore">
+    </wsdl:input>
+      <wsdl:output message="tns:triageScoreResponse" name="triageScoreResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="proceduresScheduled">
+      <wsdl:input message="tns:proceduresScheduled" name="proceduresScheduled">
+    </wsdl:input>
+      <wsdl:output message="tns:proceduresScheduledResponse" name="proceduresScheduledResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="orderRequestCompleted">
+      <wsdl:input message="tns:orderRequestCompleted" name="orderRequestCompleted">
+    </wsdl:input>
+      <wsdl:output message="tns:orderRequestCompletedResponse" name="orderRequestCompletedResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="orderRequest">
+      <wsdl:input message="tns:orderRequest" name="orderRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:orderRequestResponse" name="orderRequestResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dischargeRequest">
+      <wsdl:input message="tns:dischargeRequest" name="dischargeRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:dischargeRequestResponse" name="dischargeRequestResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="patientAdmittedWithNoBed">
+      <wsdl:input message="tns:patientAdmittedWithNoBed" name="patientAdmittedWithNoBed">
+    </wsdl:input>
+      <wsdl:output message="tns:patientAdmittedWithNoBedResponse" name="patientAdmittedWithNoBedResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="houseKeepingInCW">
+      <wsdl:input message="tns:houseKeepingInCW" name="houseKeepingInCW">
+    </wsdl:input>
+      <wsdl:output message="tns:houseKeepingInCWResponse" name="houseKeepingInCWResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="houseKeepingOutCW">
+      <wsdl:input message="tns:houseKeepingOutCW" name="houseKeepingOutCW">
+    </wsdl:input>
+      <wsdl:output message="tns:houseKeepingOutCWResponse" name="houseKeepingOutCWResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="waitForDischarge">
+      <wsdl:input message="tns:waitForDischarge" name="waitForDischarge">
+    </wsdl:input>
+      <wsdl:output message="tns:waitForDischargeResponse" name="waitForDischargeResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="physicianOutED">
+      <wsdl:input message="tns:physicianOutED" name="physicianOutED">
+    </wsdl:input>
+      <wsdl:output message="tns:physicianOutEDResponse" name="physicianOutEDResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PFMServerServiceServiceSoapBinding" type="tns:PFMServerService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="patientRegistered">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="patientRegistered">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="patientRegisteredResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="requestReferral">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="requestReferral">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="requestReferralResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dischargeCompleted">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="dischargeCompleted">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="dischargeCompletedResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="waitForProcedures">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="waitForProcedures">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="waitForProceduresResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultationCompleted2">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="consultationCompleted2">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="consultationCompleted2Response">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="patientAdmittedWithBed">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="patientAdmittedWithBed">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="patientAdmittedWithBedResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="patientInCW">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="patientInCW">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="patientInCWResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultationStarted1">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="consultationStarted1">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="consultationStarted1Response">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="patientOutCCL">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="patientOutCCL">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="patientOutCCLResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="physicianInCW">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="physicianInCW">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="physicianInCWResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="procedureStarted">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="procedureStarted">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="procedureStartedResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="procedureUpdated">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="procedureUpdated">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="procedureUpdatedResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultationCompleted1">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="consultationCompleted1">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="consultationCompleted1Response">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="patientInED">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="patientInED">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="patientInEDResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="waitForTransport">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="waitForTransport">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="waitForTransportResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ordersExecutionCompleted">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="ordersExecutionCompleted">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ordersExecutionCompletedResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="physicianInED">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="physicianInED">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="physicianInEDResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ping">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="ping">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="pingResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="waitForOrderExecution">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="waitForOrderExecution">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="waitForOrderExecutionResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="patientOutED">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="patientOutED">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="patientOutEDResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="patientTransportRequest">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="patientTransportRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="patientTransportRequestResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultationStarted2">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="consultationStarted2">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="consultationStarted2Response">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="procedureCompleted">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="procedureCompleted">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="procedureCompletedResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="proceduresExecutionCompleted">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="proceduresExecutionCompleted">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="proceduresExecutionCompletedResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultationStarted3">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="consultationStarted3">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="consultationStarted3Response">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="patientOutCW">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="patientOutCW">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="patientOutCWResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="waitForConsultation2">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="waitForConsultation2">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="waitForConsultation2Response">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="bedRequest">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="bedRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="bedRequestResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="waitForConsultation1">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="waitForConsultation1">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="waitForConsultation1Response">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="patientInCCL">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="patientInCCL">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="patientInCCLResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="bedCleanUpRequest">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="bedCleanUpRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="bedCleanUpRequestResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="physicianOutCW">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="physicianOutCW">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="physicianOutCWResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="bedCleanUpStarted">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="bedCleanUpStarted">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="bedCleanUpStartedResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="bedCleanUpCompleted">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="bedCleanUpCompleted">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="bedCleanUpCompletedResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="patientArrivedInBed">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="patientArrivedInBed">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="patientArrivedInBedResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="patientTransportStarted">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="patientTransportStarted">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="patientTransportStartedResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="waitForBed">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="waitForBed">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="waitForBedResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultationCompleted3">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="consultationCompleted3">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="consultationCompleted3Response">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="waitForBedCleanUp">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="waitForBedCleanUp">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="waitForBedCleanUpResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="triageScore">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="triageScore">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="triageScoreResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="proceduresScheduled">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="proceduresScheduled">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="proceduresScheduledResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="orderRequest">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="orderRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="orderRequestResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="orderRequestCompleted">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="orderRequestCompleted">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="orderRequestCompletedResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dischargeRequest">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="dischargeRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="dischargeRequestResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="houseKeepingInCW">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="houseKeepingInCW">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="houseKeepingInCWResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="patientAdmittedWithNoBed">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="patientAdmittedWithNoBed">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="patientAdmittedWithNoBedResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="houseKeepingOutCW">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="houseKeepingOutCW">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="houseKeepingOutCWResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="physicianOutED">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="physicianOutED">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="physicianOutEDResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="waitForDischarge">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="waitForDischarge">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="waitForDischargeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PFMServerServiceService">
+    <wsdl:port binding="tns:PFMServerServiceServiceSoapBinding" name="PFMServerServicePort">
+      <soap:address location="http://localhost:8080/PFM/services/PFMServer"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

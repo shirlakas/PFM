@@ -1,27 +1,41 @@
 package patientflowmonitoring
 
+import java.util.Date;
+import java.util.Map;
 import groovy.time.TimeCategory
 
 class PatientState {
 	
 	enum PatientStateName {
 		NEW,
-		TRIAGE_COMPLETE,
-		TRIAGE_SCORE,
+		TRIAGED,
 		WAIT_FOR_CONSULTATION1,
 		WAIT_FOR_CONSULTATION2,
 		IN_CONSULTATION1,
 		IN_CONSULTATION2,
-		CONSULTATION_COMPLETE1,
-		CONSULTATION_COMPLETE2,
+		IN_BED_ED,
 		WAIT_FOR_ORDER_EXECUTION,
 		ORDER_EXECUTION,
 		ORDER_EXECUTION_COMPLETE,
-		WAIT_FOR_BED,
+		WAIT_FOR_BED_CW,
+		WAIT_FOR_TRANSPORT_CW,
+		WAIT_FOR_TRANSPORT_CCL,
 		WAIT_FOR_TRANSPORT,
+		IN_TRANSPORT_CCL,
+		IN_TRANSPORT_CW,
 		IN_TRANSPORT,
 		IN_BED,
-		DISCHARGED
+		IN_BED_CW,
+		IN_BED_CCL,
+		DISCHARGED,
+		IN_PROCEDURE_ANGIOGRAM,
+		IN_PROCEDURE_PCI,
+		IN_CONSULTATION3,
+		ORDERS_EXECUTION_COMPLETE,
+		WAIT_FOR_PROCEDURES,
+		IN_PROCEDURE,
+		PROCEDURES_EXECUTION_COMPLETE,
+		WAIT_FOR_DISCHARGE
 		}
 	
 	PatientStateName stateName;
@@ -45,7 +59,7 @@ class PatientState {
 	def void setEndTime(Date ts){
 		endTime = ts
 		if (startTime!=null&&endTime!=null){
-			duration = TimeCategory.minus(endTime,startTime).toMilliseconds()/60000
+			duration = TimeCategory.minus(endTime,startTime).toMilliseconds()/60000 +1
 		}
 	}
 	

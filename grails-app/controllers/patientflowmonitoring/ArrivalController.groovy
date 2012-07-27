@@ -21,7 +21,7 @@ class ArrivalController {
 	}
 	
 	def hourlyArrival = {
-		def arrivals = [:]
+		/*def arrivals = [:]
 		def Date today = new Date()
 		def dayTag = Statistics.createDayTag(today)
 		
@@ -38,6 +38,9 @@ class ArrivalController {
 		}
 		retVal.append("]")
 		
+		
+		render(retVal)*/
+		def retVal = "[{\"hour\":0,\"arrival\":3},{\"hour\":1,\"arrival\":4},{\"hour\":2,\"arrival\":1},{\"hour\":3,\"arrival\":1},{\"hour\":4,\"arrival\":3},{\"hour\":5,\"arrival\":5},{\"hour\":6,\"arrival\":7},{\"hour\":7,\"arrival\":7},{\"hour\":8,\"arrival\":6},{\"hour\":9,\"arrival\":4},{\"hour\":10,\"arrival\":3}]"
 		render(retVal)
 		
 	}

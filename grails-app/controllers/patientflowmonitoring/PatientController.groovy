@@ -11,7 +11,7 @@ class PatientController {
 	def patientService
 	
 	static navigation = [
-		[group:'tabs',action:'getPatientMap', title:'Unit',order:0],
+		[group:'tabs',action:'getPatientMap', title:'Floor',order:0],
 		[action:'getPatientDetails', title:'Patient',order:5]
 	]
 	
@@ -107,4 +107,28 @@ class PatientController {
 
 		render(view:"currentPatientsWaitTime",model:[patients:patients])
 	}
+	
+	def getAverageDuration = {
+		def retVal =  "[{\"state\":\"TRIAGED\",\"duration\":\"3\"},{\"state\":\"WAIT_FOR_CONSULTATION1\",\"duration\":\"2\"},{\"state\":\"IN_CONSULTATION1\",\"duration\":\"3\"},{\"state\":\"IN_BED_ED\",\"duration\":\"5\"},{\"state\":\"WAIT_FOR_ORDER_EXECUTION\",\"duration\":\"1\"},{\"state\":\"WAIT_FOR_CONSULTATION2\",\"duration\":\"2\"},{\"state\":\"IN_CONSULTATION2\",\"duration\":\"1\"},{\"state\":\"IN_BED_ED\",\"duration\":\"3\"},{\"state\":\"WAIT_FOR_BED_CW\",\"duration\":\"5\"},{\"state\":\"WAIT_FOR_TRANSPORT_CW\",\"duration\":\"1\"},{\"state\":\"IN_TRANSPORT_CW\",\"duration\":\"1\"},{\"state\":\"IN_BED_CW\",\"duration\":\"5\"},{\"state\":\"WAIT_FOR_PROCEDURES\",\"duration\":\"5\"},{\"state\":\"WAIT_FOR_TRANSPORT_CCL\",\"duration\":\"1\"},{\"state\":\"IN_TRANSPORT_CCL\",\"duration\":\"1\"},{\"state\":\"IN_BED_CCL\",\"duration\":\"2\"},{\"state\":\"IN_PROCEDURE_ANGIOGRAM\",\"duration\":\"4\"},{\"state\":\"IN_BED_CCL\",\"duration\":\"1\"},{\"state\":\"IN_PROCEDURE_PCI\",\"duration\":\"5\"},{\"state\":\"IN_BED_CCL\",\"duration\":\"5\"},{\"state\":\"WAIT_FOR_TRANSPORT_CW\",\"duration\":\"1\"},{\"state\":\"IN_TRANSPORT_CW\",\"duration\":\"1\"},{\"state\":\"IN_BED_CW\",\"duration\":\"10\"},{\"state\":\"IN_CONSULTATION3\",\"duration\":\"2\"},{\"state\":\"IN_BED_CW\",\"duration\":\"3\"},{\"state\":\"WAIT_FOR_DISCHARGE\",\"duration\":\"1\"},{\"state\":\"DISCHARGED\",\"duration\":\"0\"}]";
+		render(contentType:"application/json",text:retVal)
+		
+		}
+	def getWaitTime = {
+		def patientId = params.id
+		Patient patient = Patient.findByPatientID(params.id)
+		List states = patient.states
+		
+		def retVal = new StringBuffer()
+		retVal.append("[")
+		states.each{
+			retVal.append("{\"state\":\"${it.stateName}\",\"duration\":\"${it.duration}\"},")
+		}
+		if (retVal.size()>1){
+			def temp = retVal.substring(0,retVal.size()-1);
+			retVal = new StringBuffer(temp);
+		}
+		retVal.append("]")
+	  render(contentType:"application/json",text:retVal)
+
+}
 }

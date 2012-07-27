@@ -14,6 +14,11 @@ class ConsultationCompleted1Handler extends EventHandler {
 		
 		event.eventName = EventName.ConsultationCompleted1
 		
+		def patientState = new PatientState()
+		patientState.stateName = PatientStateName.IN_BED_ED
+		//patientState.stateAttributes.put ('PhysicianId', props['Physician_ID'])
+		updatePatientState(patientState)
+		
 		return null;
 	}
 

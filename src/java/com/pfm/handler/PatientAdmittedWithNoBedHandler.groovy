@@ -15,9 +15,11 @@ class PatientAdmittedWithNoBedHandler extends EventHandler {
 		
 		event.eventName = EventName.PatientAdmittedWithNoBed
 		
-		def Admission admission = new Admission()
-		admission.setTimeStamp(createTimeStamp(props['timestamp']))
-		admission.save()
+		//def patientState = new PatientState()
+		//patientState.stateName = PatientStateName.WAIT_FOR_BED_CW
+		//patientState.stateAttributes.put ("UnitId", props["Unit_ID"])
+		
+		//updatePatientState(patientState)
 		
 		return null;
 	}

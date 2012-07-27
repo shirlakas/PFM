@@ -5,7 +5,7 @@ import org.codehaus.groovy.grails.web.servlet.GrailsApplicationAttributes;
 import org.springframework.context.*;
 import com.pfm.handler.EventHandler
 import grails.plugin.jms.*
-import patientflowmonitoring.Bed.BedStatus;
+//import patientflowmonitoring.Bed.BedStat;
 
 
 class MessageService {
@@ -17,7 +17,7 @@ class MessageService {
 	static expose = ['jms']
 	
 	def patientService
-	def bedService
+	def roomService
 	def monitorService
 	def grailsApplication
 	

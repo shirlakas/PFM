@@ -15,7 +15,7 @@ class WaitForBedHandler extends EventHandler {
 		event.eventName = EventName.WaitForBed
 		
 		def patientState = new PatientState()
-		patientState.stateName = PatientStateName.WAIT_FOR_BED
+		patientState.stateName = PatientStateName.WAIT_FOR_BED_CW
 		patientState.stateAttributes.put ("Unit_ID", props["Unit_ID"])
 		//patient.setCurrentState(patientState,null)
 		updatePatientState(patientState)

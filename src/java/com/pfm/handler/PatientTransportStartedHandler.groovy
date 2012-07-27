@@ -15,10 +15,19 @@ class PatientTransportStartedHandler extends EventHandler {
 		event.eventName = EventName.PatientTransportStarted
 		
 		def patientState = new PatientState()
-		patientState.stateName = PatientStateName.IN_TRANSPORT
-//		patient.setCurrentState(patientState,null)
+		patientState.stateAttributes.put ('LocationId', props['Location_ID'])
+		patientState.stateAttributes.put ('UnitId', props['Unit_ID'])
+		if(patientState.stateAttributes.UnitId=='CCL'){
+			patientState.stateName = PatientStateName.IN_TRANSPORT_CCL
+		}
+		else if(patientState.stateAttributes.UnitId=='CW'){
+			patientState.stateName = PatientStateName.IN_TRANSPORT_CW
+		}
+		else{
+			patientState.stateName = PatientStateName.IN_TRANSPORT
+		}
 		updatePatientState(patientState)
-		
+				
 		return null;
 	}
 

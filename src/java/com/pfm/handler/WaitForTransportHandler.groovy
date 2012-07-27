@@ -15,9 +15,19 @@ class WaitForTransportHandler extends EventHandler {
 		event.eventName = EventName.WaitForTransport
 		
 		def patientState = new PatientState()
-		patientState.stateName = PatientStateName.WAIT_FOR_TRANSPORT
-//		patient.setCurrentState(patientState,null)
+		patientState.stateAttributes.put ('LocationId', props['Location_ID'])
+		patientState.stateAttributes.put ('UnitId', props['Unit_ID'])
+		if(patientState.stateAttributes.UnitId=='CCL'){
+			patientState.stateName = PatientStateName.WAIT_FOR_TRANSPORT_CCL
+		}
+		else if(patientState.stateAttributes.UnitId=='CW'){
+			patientState.stateName = PatientStateName.WAIT_FOR_TRANSPORT_CW
+		}
+		//else{
+		//	patientState.stateName = PatientStateName.WAIT_FOR_TRANSPORT
+		//}
 		updatePatientState(patientState)
+				
 		return null;
 	}
 
