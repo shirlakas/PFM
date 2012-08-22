@@ -2,7 +2,7 @@ package com.pfm.handler
 
 import java.util.Map;
 
-import patientflowmonitoring.Bed
+//import patientflowmonitoring.Room
 import patientflowmonitoring.Patient
 import patientflowmonitoring.PatientState;
 import patientflowmonitoring.PatientState.PatientStateName
@@ -15,11 +15,14 @@ class TriageScoreHandler extends EventHandler {
 	def process(Map props){
 		
 		event.eventName = EventName.Triage  // assignment the event name value, which must be a predefined value in Event.EventName
+		patient.roomID = 'AssessmentRoom'
+		//patient.save();
 		
 		log.info(patientId + " arrived TriageScoreHandler") // for logging purpose only
 		
 		def patientState = new PatientState()				// Since this event will cause the state change of the patient, the following three lines are for updating patient state
-		patientState.stateName = PatientStateName.NEW
+		patientState.stateName = PatientStateName.TRIAGED
+		patientState.target = 30
 		updatePatientState(patientState)
 		
 		def Arrival arrival = new Arrival()					// This event will add a new Arrival object into the PFM system for statistics. 

@@ -5,7 +5,7 @@ import java.util.Map;
 import patientflowmonitoring.Patient;
 import patientflowmonitoring.PatientState;
 import patientflowmonitoring.Event.EventName;
-import patientflowmonitoring.PatientState.PatientStateName;;
+import patientflowmonitoring.PatientState.PatientStateName;
 
 class PatientTransportRequestHandler extends EventHandler {
 
@@ -14,6 +14,7 @@ class PatientTransportRequestHandler extends EventHandler {
 		
 		event.eventName = EventName.PatientTransportRequest
 		
+				
 		return null;
 	}
 

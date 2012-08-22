@@ -97,3 +97,25 @@ log4j = {
 	
 	info	'grails.app'
 }
+
+//cxf configuration
+
+cxf {
+	installDir ="apache-cxf-2.4.6"
+	
+	client {
+		sendClient{
+						
+			/* PFM Server WSDL  */
+			clientInterface = patientflowmonitoring.PFMServerService
+			//namespace = "osler.eecs.uottawa.ca/PFM/"
+			wsdl = "web-app/PFMServer.wsdl"
+			
+			/* Message broker version 8 */
+			serviceEndpointAddress= "http://137.122.88.139:7080/soap/registerEvent-pfm" //using pfm format
+			//serviceEndpointAddress ="http://137.122.88.139:7080/soap/registerEvent-tws"  //using lombardi's format
+			}
+			
+	}
+}
+

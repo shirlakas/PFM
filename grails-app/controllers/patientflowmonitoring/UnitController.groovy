@@ -9,15 +9,17 @@ class UnitController {
 	]
 	
 	def queryUnitPerformance(def unit){
-		def c = Patient.createCriteria()
+		/*def c = Patient.createCriteria()
 		
 		def patientList = c.list{
 			like ("roomID", unit+"%")
-		}
+		}*/
+		def patientList = Patient.getAll()
 		
 		List dataSet = [];
 		patientList.each({
 			def p = it
+			
 			def states = p.states
 			states.each({
 				//	println it
@@ -30,6 +32,7 @@ class UnitController {
 					//dataSet<<"['${p}','${it}','${it.duration}']"
 				}
 			})
+			
 		})
 		
 		return dataSet

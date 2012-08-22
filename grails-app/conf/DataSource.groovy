@@ -1,8 +1,12 @@
 dataSource {
 	pooled = false
 	driverClassName = "com.mysql.jdbc.Driver"
-	username = "pfm"
-	password = "pfm"
+	//username = "pfm"
+	//password = "pfm"
+	username = "shirley"
+	password = ""
+	//username = "root"
+	//password = ""
 }
 hibernate {
 	cache.use_second_level_cache = true
@@ -14,23 +18,27 @@ environments {
 	development {
 		dataSource {
 			pooled = true
-			driverClassName = "org.hsqldb.jdbcDriver"
+	/*		driverClassName = "org.hsqldb.jdbcDriver"
 			username = "sa"
 			password = ""
 			dbCreate = "create-drop" // one of 'create', 'create-drop','update'
             url = "jdbc:hsqldb:mem:devDB"
+			url = "jdbc:mysql://localhost/PFM_dev"*/
+			dbCreate = "create-drop"
+			
+			url = "jdbc:mysql://localhost/pfm"
 		}
 	}
 	test {
 		dataSource {
-			dbCreate = "update"
-			url = "jdbc:mysql://localhost:3306/PFM"
+			dbCreate = "create-drop"
+			url = "jdbc:mysql://localhost/pfm"
 		}
 	}
 	production {
 		dataSource {
-			dbCreate = "update"
-			url = "jdbc:mysql://localhost:3306/PFM"
+			dbCreate = "create-drop"
+			url = "jdbc:mysql://localhost/pfm"
 		}
 	}
 }

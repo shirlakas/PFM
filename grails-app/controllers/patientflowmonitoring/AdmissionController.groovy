@@ -43,11 +43,18 @@ class AdmissionController {
 	}
 	
 	def hourlyAdmissionDischarge = {
-		def admission = hourlyAdmission()
-		def discharge = hourlyDischarge()
-		def retVal = "{\"hourlyAdmission\":${admission},\"hourlyDischarge\":${discharge}}"
+		//def admission = hourlyAdmission()
+		//def discharge = hourlyDischarge()
+		//def retVal = "{\"hourlyAdmission\":${admission},\"hourlyDischarge\":${discharge}}"
+		
+		def retVal = "{\"hourlyAdmission\":[{\"hour\":0,\"admission\":1},{\"hour\":1,\"admission\":2},{\"hour\":2,\"admission\":2},{\"hour\":3,\"admission\":1},{\"hour\":4,\"admission\":1},{\"hour\":5,\"admission\":2},{\"hour\":6,\"admission\":3},{\"hour\":7,\"admission\":4},{\"hour\":8,\"admission\":4},{\"hour\":9,\"admission\":1},{\"hour\":10,\"admission\":3}],\"hourlyDischarge\":[{\"hour\":0,\"discharge\":1},{\"hour\":5,\"discharge\":1},{\"hour\":6,\"discharge\":1},{\"hour\":7,\"discharge\":2},{\"hour\":8,\"discharge\":2},{\"hour\":9,\"discharge\":3},{\"hour\":10,\"discharge\":4}]}"
 		render(contentType:"application/json",text:retVal)
 	}
+
+		
+		
+		
+
 	
 	def hourlyAdmission = {
 		def Date today = new Date()

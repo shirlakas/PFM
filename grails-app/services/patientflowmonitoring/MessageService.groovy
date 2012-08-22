@@ -5,7 +5,7 @@ import org.codehaus.groovy.grails.web.servlet.GrailsApplicationAttributes;
 import org.springframework.context.*;
 import com.pfm.handler.EventHandler
 import grails.plugin.jms.*
-import patientflowmonitoring.Bed.BedStatus;
+//import patientflowmonitoring.Bed.BedStat;
 
 
 class MessageService {
@@ -17,7 +17,7 @@ class MessageService {
 	static expose = ['jms']
 	
 	def patientService
-	def bedService
+	def roomService
 	def monitorService
 	def grailsApplication
 	
@@ -33,13 +33,14 @@ class MessageService {
 		EventHandler h = ctx.getBean (props['event'].toLowerCase()+"Handler")
 		log.info("h=" + h)
 		h.handle (props)
+		
 	}
 	
 	@Queue(name='CEP_Event')
 	def CEP_EventArrive(msg){
-		log.info('\nThe CEP evenit I received is: \n' + msg)
+		log.info('\nThe CEP event I received is: \n' + msg)
 	}
-	
+		
 	def processMsg(msg){
 		def parts = msg.split(',')
 		def props = [:]

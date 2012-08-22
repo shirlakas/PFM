@@ -19,7 +19,8 @@ class MessageController {
 	
 	def sendCEP = {
 		jmsService.send(queue:'CEP_Event',params.body)
-		render(text:"Ok", contentType:"text/html",encoding:"UTF-8")
+		flash.message = "Message queued for persistence"
+		//render(text:"Ok", contentType:"text/html",encoding:"UTF-8")
 	}
 	
 	def update = {

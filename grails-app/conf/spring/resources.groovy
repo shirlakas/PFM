@@ -14,23 +14,47 @@ beans = {
 	
 	triagescoreHandler(com.pfm.handler.TriageScoreHandler){}
 	patientregisteredHandler(com.pfm.handler.PatientRegisteredHandler){}
-	waitforconsultationHandler(com.pfm.handler.WaitForConsultationHandler){}
-	waitforconsultationcompletedHandler(com.pfm.handler.WaitForConsultationCompletedHandler){}
-	consultationstartedHandler(com.pfm.handler.ConsultationStartedHandler){}
+	waitforconsultation1Handler(com.pfm.handler.WaitForConsultation1Handler){}
+	waitforconsultation2Handler(com.pfm.handler.WaitForConsultation2Handler){}
+	consultationstarted1Handler(com.pfm.handler.ConsultationStarted1Handler){}
+	consultationstarted2Handler(com.pfm.handler.ConsultationStarted2Handler){}
 	orderrequestHandler(com.pfm.handler.OrderRequestHandler){}
-	consultationcompletedHandler(com.pfm.handler.ConsultationCompletedHandler){}
+	consultationcompleted1Handler(com.pfm.handler.ConsultationCompleted1Handler){}
+	consultationcompleted2Handler(com.pfm.handler.ConsultationCompleted2Handler){}
+	requestreferralHandler(com.pfm.handler.RequestReferralHandler){}
 	waitfororderexecutionHandler(com.pfm.handler.WaitForOrderExecutionHandler){}
 	orderrequestcompletedHandler(com.pfm.handler.OrderRequestCompletedHandler){}
-	orderexecutioncompletedHandler(com.pfm.handler.OrderExecutionCompletedHandler){}
+	//orderexecutioncompletedHandler(com.pfm.handler.OrderExecutionCompletedHandler){}
+	ordersexecutioncompletedHandler(com.pfm.handler.OrdersExecutionCompletedHandler){}
 	bedrequestHandler(com.pfm.handler.BedRequestHandler){}
 	patientadmittedwithnobedHandler(com.pfm.handler.PatientAdmittedWithNoBedHandler){}
 	waitforbedHandler(com.pfm.handler.WaitForBedHandler){}
-	dischargeHandler(com.pfm.handler.DischargeHandler){}
 	patientadmittedwithbedHandler(com.pfm.handler.PatientAdmittedWithBedHandler){}
-	waitedforbedcompletedHandler(com.pfm.handler.WaitedForBedCompletedHandler){}
 	patienttransportrequestHandler(com.pfm.handler.PatientTransportRequestHandler){}
 	waitfortransportHandler(com.pfm.handler.WaitForTransportHandler){}
-	waitfortransportcompletedHandler(com.pfm.handler.WaitForTransportCompletedHandler){}
 	patienttransportstartedHandler(com.pfm.handler.PatientTransportStartedHandler){}
-	patienttransportcompletedHandler(com.pfm.handler.PatientTransportCompletedHandler){}
+	patientarrivedinbedHandler(com.pfm.handler.PatientArrivedInBedHandler){}
+	
+	//extended scenario events
+	consultationstarted3Handler(com.pfm.handler.ConsultationStarted3Handler){}
+	consultationcompleted3Handler(com.pfm.handler.ConsultationCompleted3Handler){}
+	waitforproceduresHandler(com.pfm.handler.WaitForProceduresHandler){}
+	procedurerequestHandler(com.pfm.handler.ProcedureRequestHandler){}
+	procedurestartedHandler(com.pfm.handler.ProcedureStartedHandler){}
+	procedurecompletedHandler(com.pfm.handler.ProcedureCompletedHandler){}
+	proceduresexecutioncompletedHandler(com.pfm.handler.ProceduresExecutionCompletedHandler){}
+	proceduresscheduledHandler(com.pfm.handler.ProceduresScheduledHandler){}
+	procedureupdatedHandler(com.pfm.handler.ProcedureUpdatedHandler){}
+	dischargecompletedHandler(com.pfm.handler.DischargeCompletedHandler){}
+	dischargerequestHandler(com.pfm.handler.DischargeRequestHandler){}
+	waitfordischargeHandler(com.pfm.handler.WaitForDischargeHandler){}
+	bedcleanuprequestHandler(com.pfm.handler.BedCleanUpRequestHandler){}
+	waitforbedcleanupHandler(com.pfm.handler.WaitForBedCleanUpHandler){}
+	bedcleanupstartedHandler(com.pfm.handler.BedCleanUpStartedHandler){}
+	bedcleanupcompletedHandler(com.pfm.handler.BedCleanUpCompletedHandler){}
+	
+	
+	
+	
+	
 }

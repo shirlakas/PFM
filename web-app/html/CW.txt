@@ -1,0 +1,6 @@
+[{"patientId":"Pa123456","state":"WAIT_FOR_CONSULTATION1","duration":"20"},{"patientId":"Pa123456","state":"WAIT_FOR_CONSULTATION2","duration":"50"},
+{"patientId":"Pa123456","state":"WAIT_FOR_BED_CW","duration":"0"},{"patientId":"Pa123456","state":"WAIT_FOR_BED_CW","duration":"150"},
+{"patientId":"Pa123456","state":"WAIT_FOR_TRANSPORT_CW","duration":"25"},{"patientId":"Pa123456","state":"WAIT_FOR_CONSULTATION1","duration":"2"},
+{"patientId":"Pa123456","state":"WAIT_FOR_CONSULTATION2","duration":"-235"},{"patientId":"Pa123456","state":"WAIT_FOR_BED_CW","duration":"0"},
+{"patientId":"Pa123456","state":"WAIT_FOR_BED_CW","duration":"9"},{"patientId":"Pa123456","state":"WAIT_FOR_BED_CW","duration":"3"},
+{"patientId":"Pa123456","state":"WAIT_FOR_TRANSPORT_CW","duration":"0"},{"patientId":"Pa123456","state":"WAIT_FOR_TRANSPORT_CW","duration":"0"}]
