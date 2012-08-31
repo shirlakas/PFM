@@ -135,14 +135,14 @@
 		</ul>
 		
 		<div id="patientstats">
-			<h1>Patient States Chart &nbsp; &nbsp; Total Time Spent: <g:formatNum number="${total}" format="### minutes"/> </h1>
+			<h1>Patient States Chart &nbsp; &nbsp; Overall Duration: <g:formatNum number="${totalhrs}" format="### hours"/> <g:formatNum number="${totalmins}" format="### mins"/> </h1>
 			<div id="chart_arrivals_div"></div>
 		</div>
 
 		<div id="clinicalInfo">
 			<h1>Patient States</h1>
 			<div id="states"></div>
-			<h1>Total Time Spent: <g:formatNum number="${total}" format="### minutes"/></h1>			
+			<h1>Overall Duration: <g:formatNum number="${totalhrs}" format="### hours"/> <g:formatNum number="${totalmins}" format="### mins"/></h1>			
 		</div>
 				
 		<div id="otherInfo">

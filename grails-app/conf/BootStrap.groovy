@@ -32,6 +32,7 @@ class BootStrap {
 		jmsService.send(queue:'PFM_Event','event:WaitForConsultation2,timestamp:2012-07-22/05-40-50,Patient_ID:Pa111111')
 		jmsService.send(queue:'PFM_Event','event:ConsultationStarted2,timestamp:2012-07-22/06-00-00,Provider_ID:Phy777777,Patient_ID:Pa111111')
 		jmsService.send(queue:'PFM_Event','event:ConsultationCompleted2,timestamp:2012-07-22/06-34-00,Provider_ID:Phy777777,Patient_ID:Pa111111')
+<<<<<<< HEAD
 		jmsService.send(queue:'PFM_Event','event:PatientAdmittedWithNoBed,timestamp:2012-07-22/06-41-10,Unit_ID:CW,Patient_ID:Pa111111')
 		jmsService.send(queue:'PFM_Event','event:WaitForBed,timestamp:2012-07-22/06-42-00,Unit_ID:CW,Patient_ID:Pa111111')
 		
@@ -40,6 +41,13 @@ class BootStrap {
 		jmsService.send(queue:'PFM_Event','event:PatientTransportStarted,Unit_ID:CW,timestamp:2012-07-22/16-00-00,Patient_ID:Pa111111')
 		jmsService.send(queue:'PFM_Event','event:PatientArrivedInBed,timestamp:2012-07-22/16-10-00,Location_ID:R105,Unit_ID:CW,Patient_ID:Pa111111')
 		jmsService.send(queue:'PFM_Event','event:WaitForProcedures,timestamp:2012-07-22/16-10-10,Unit_ID:CW,Patient_ID:Pa111111')
+=======
+		jmsService.send(queue:'PFM_Event','event:PatientAdmittedWithBed,timestamp:2012-07-22/06-40-00,Location_ID:R105,Unit_ID:CW,Patient_ID:Pa111111')
+		jmsService.send(queue:'PFM_Event','event:WaitForTransport,timestamp:2012-07-22/06-50-00,Unit_ID:CW,Patient_ID:Pa111111')
+		jmsService.send(queue:'PFM_Event','event:PatientTransportStarted,Unit_ID:CW,timestamp:2012-07-22/07-30-00,Patient_ID:Pa111111')
+		jmsService.send(queue:'PFM_Event','event:PatientArrivedInBed,timestamp:2012-07-22/07-40-00,Location_ID:R105,Unit_ID:CW,Patient_ID:Pa111111')
+		jmsService.send(queue:'PFM_Event','event:WaitForProcedures,timestamp:2012-07-22/07-40-10,Unit_ID:CW,Patient_ID:Pa111111')
+>>>>>>> f4fa27adbc363f20abc26a27a8643268f9638a66
 		jmsService.send(queue:'PFM_Event','event:PatientTransportRequest,Unit_ID:CCL,timestamp:2012-07-23/02-05-00,Provider_ID:Nur121212,Patient_ID:Pa111111')
 		jmsService.send(queue:'PFM_Event','event:WaitForTransport,timestamp:2012-07-23/02-05-10,Unit_ID:CCL,Patient_ID:Pa111111')
 		jmsService.send(queue:'PFM_Event','event:PatientTransportStarted,Unit_ID:CCL,timestamp:2012-07-23/02-30-00,Patient_ID:Pa111111')
@@ -54,10 +62,13 @@ class BootStrap {
 		jmsService.send(queue:'PFM_Event','event:PatientTransportStarted,Unit_ID:CW,timestamp:2012-07-23/07-30-00,Patient_ID:Pa111111')
 		jmsService.send(queue:'PFM_Event','event:PatientArrivedInBed,timestamp:2012-07-23/07-40-00,Location_ID:R105,Unit_ID:CW,Patient_ID:Pa111111')
 		jmsService.send(queue:'PFM_Event','event:ConsultationStarted3,timestamp:2012-07-23/08-00-00,Provider_ID:Phy777777,Patient_ID:Pa111111')
+<<<<<<< HEAD
 		//jmsService.send(queue:'PFM_Event','event:ConsultationCompleted3,timestamp:2012-07-23/08-10-00,Provider_ID:Phy777777,Patient_ID:Pa111111')
 		//jmsService.send(queue:'PFM_Event','event:WaitForDischarge,timestamp:2012-07-23/08-11-00,Unit_ID:CW,Patient_ID:Pa111111')
 		//jmsService.send(queue:'PFM_Event','event:DischargeCompleted,timestamp:2012-07-23/09-00-00,Unit_ID:CW,Patient_ID:Pa111111')
 		
+=======
+>>>>>>> f4fa27adbc363f20abc26a27a8643268f9638a66
 				
 		jmsService.send(queue:'PFM_Event','event:TriageScore,timestamp:2012-07-23/03-30-00,Provider_ID:Nurse745774,CTAS:2,Patient_ID:Pa123457')
 		jmsService.send(queue:'PFM_Event','event:WaitForConsultation1,timestamp:2012-07-23/04-00-00,Patient_ID:Pa123457')

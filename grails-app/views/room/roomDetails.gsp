@@ -46,7 +46,10 @@
 
 				$('#events').html( '<table cellpadding="0" cellspacing="0" border="0" class="display" id="event_table"></table>' );
 				$('#event_table').dataTable( {
+<<<<<<< HEAD
 					 "bPaginate": false, /*  remove this line if you want paging*/
+=======
+>>>>>>> f4fa27adbc363f20abc26a27a8643268f9638a66
 					"aaData": eventDataSet,
 					"aaSorting": [[ 1, "desc" ]],
 					"aoColumns": [

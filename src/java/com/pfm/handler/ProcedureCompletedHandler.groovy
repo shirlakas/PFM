@@ -18,7 +18,10 @@ class ProcedureCompletedHandler extends EventHandler{
 		patientState.stateAttributes.put ('ProcedureType', props['Procedure_Type'])
 		
 		patientState.stateName = PatientStateName.IN_BED_CCL
+<<<<<<< HEAD
 		patientState.target = 60
+=======
+>>>>>>> f4fa27adbc363f20abc26a27a8643268f9638a66
 		updatePatientState(patientState)
 		
 		return null;

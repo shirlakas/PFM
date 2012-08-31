@@ -88,7 +88,9 @@ class PatientController {
 	def getPatientDetails = {
 		def file = new File(servletContext.getRealPath("/html/ClinicalPathway.html"))
 		String clincalpathWay = file.getText()
-		def total=0;
+		int total=0;
+		int totalhrs=0;
+		int totalmins=0;
 		def duratn;
 		if (params.id){
 			Patient patient = Patient.findByPatientID(params.id)
@@ -108,11 +110,13 @@ class PatientController {
 				def triage = states.get(0)
 				def strtTime = triage.startTime
 				def now = new Date()
-				total=TimeCategory.minus(now,strtTime).toMilliseconds()/60000 +1;	
+				total=TimeCategory.minus(now,strtTime).toMilliseconds()/60000;	
 			}
-						
+			total=total.intValue()
+			totalhrs = total.intdiv(60)
+			totalmins = total%totalhrs
 			render(view:"patientDetails",model:
-				[patient:patient,clincalPathWay:clincalpathWay,total:total])
+				[patient:patient,clincalPathWay:clincalpathWay,totalhrs:totalhrs,totalmins:totalmins])
 			
 		}else if(session.patient){
 			Patient patient=session.patient
@@ -122,6 +126,7 @@ class PatientController {
 				duratn=it.duration
 				total +=duratn.toInteger()
 				}
+				
 			}
 			else{
 				def triage = states.get(0)
@@ -129,9 +134,15 @@ class PatientController {
 				def now = new Date()
 				total=TimeCategory.minus(now,strtTime).toMilliseconds()/60000 +1;	
 			}
+			
+			//totalhrs = TimeCategory.getHour( total)
+			total=total.intValue()
+			//total=total.round(0)
+			totalhrs = total.intdiv(60)
+			totalmins = total%totalhrs
 		
 		render(view:"patientDetails",model:
-		[patient:session.patient,clincalPathWay:clincalpathWay, total:total])
+		[patient:session.patient,clincalPathWay:clincalpathWay, totalhrs:totalhrs,totalmins:totalmins])
 		}else{
 			getPatientMap()
 		}

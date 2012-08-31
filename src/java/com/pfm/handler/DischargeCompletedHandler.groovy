@@ -18,9 +18,13 @@ class DischargeCompletedHandler extends EventHandler {
 		
 		def patientState = new PatientState()
 		patientState.stateName = PatientStateName.DISCHARGED
+<<<<<<< HEAD
 		patientState.target = 15
 		patient.roomID = ""
 		patientState.endTime = createTimeStamp(props['timestamp'])+1
+=======
+		patient.roomID = ""
+>>>>>>> f4fa27adbc363f20abc26a27a8643268f9638a66
 		updatePatientState(patientState)
 		
 		def Discharge discharge = new Discharge()

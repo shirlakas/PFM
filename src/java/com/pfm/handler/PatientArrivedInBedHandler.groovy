@@ -21,7 +21,10 @@ class PatientArrivedInBedHandler extends EventHandler {
 		patientState.stateAttributes.put ('UnitId', props['Unit_ID'])
 		if(patientState.stateAttributes.UnitId=='CCL'){
 			patientState.stateName = PatientStateName.IN_BED_CCL
+<<<<<<< HEAD
 			patientState.target = 60
+=======
+>>>>>>> f4fa27adbc363f20abc26a27a8643268f9638a66
 		}
 		else if(patientState.stateAttributes.UnitId=='CW'){
 			patientState.stateName = PatientStateName.IN_BED_CW

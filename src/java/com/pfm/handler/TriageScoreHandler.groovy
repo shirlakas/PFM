@@ -22,7 +22,10 @@ class TriageScoreHandler extends EventHandler {
 		
 		def patientState = new PatientState()				// Since this event will cause the state change of the patient, the following three lines are for updating patient state
 		patientState.stateName = PatientStateName.TRIAGED
+<<<<<<< HEAD
 		patientState.target = 30
+=======
+>>>>>>> f4fa27adbc363f20abc26a27a8643268f9638a66
 		updatePatientState(patientState)
 		
 		def Arrival arrival = new Arrival()					// This event will add a new Arrival object into the PFM system for statistics. 
