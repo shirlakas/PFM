@@ -1,14 +1,14 @@
 package patientflowmonitoring
 
+import java.util.Date;
+import java.util.Map;
+
 class Event {
 	
 	enum EventName{
 		Triage,
 		Registered,
-		//WaitForConsultation,
 		WaitForConsultation1,
-		//ConsultationStarted,
-		//ConsultationCompleted,
 		ConsultationStarted1,
 		ConsultationCompleted1,
 		ConsultationStarted2,
@@ -16,7 +16,6 @@ class Event {
 		OrderRequest,
 		WaitForOrderExecution,
 		OrderRequestCompleted,
-		OrderExecutionCompleted,
 		WaitForConsultation2,
 		BedRequest,
 		PatientAdmittedWithNoBed,
@@ -26,7 +25,29 @@ class Event {
 		WaitForTransport,
 		PatientTransportStarted,
 		PatientArrivedInBed,
-		Discharge
+		
+		
+		// new events for extended scenario
+		OrdersExecutionCompleted,
+		RequestReferral,
+		ConsultationStarted3,
+		ConsultationCompleted3,
+		ProcedureRequest,
+		ProceduresScheduled,
+		WaitForProcedures,
+		ProcedureStarted,
+		ProcedureCompleted,
+		ProcedureUpdated,
+		ProceduresExecutionCompleted,
+		DischargeRequest,
+		WaitForDischarge,
+		DischargeCompleted,
+		//BedCleanUpRequest,
+		//WaitForBedCleanUp,
+		//BedCleanUpStarted,
+		//BedCleanUpCompleted
+		
+		
 	}
 	
 	EventName eventName

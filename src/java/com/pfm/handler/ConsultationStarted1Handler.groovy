@@ -13,14 +13,10 @@ class ConsultationStarted1Handler extends EventHandler {
 		
 		event.eventName = EventName.ConsultationStarted1
 		
-//		def patient = Patient.findByPatientID(patientId)
 		def patientState = new PatientState()
 		patientState.stateName = PatientStateName.IN_CONSULTATION1
-		patientState.stateAttributes.put ('ProviderId', props['Provider_ID'])
+		//patientState.stateAttributes.put ('PhysicianId', props['Physician_ID'])
 		updatePatientState(patientState)
-//		patient.setCurrentState(patientState,null)
-//		patient.appendEvent(event)
-//		patient.save()
 		
 		return null;
 	}

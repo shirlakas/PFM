@@ -25,19 +25,19 @@ environments {
     }*/
 	development {
 		dataSource {
-			dbCreate = "update" // keep adding new fields to the existing tables - preserves tables between runs
+			dbCreate = "create-drop" // keep adding new fields to the existing tables - preserves tables between runs
 			url = "jdbc:mysql://localhost/PFM_dev" // creates a file based database
 		}
 	}
     test {
         dataSource {
-            dbCreate = "update"
+            dbCreate = "create-drop"
             url = "jdbc:hsqldb:mem:testDb"
         }
     }
     production {
         dataSource {
-            dbCreate = "update"
+            dbCreate = "create-drop"
             url = "jdbc:hsqldb:file:prodDb;shutdown=true"
         }
     }

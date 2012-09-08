@@ -3,9 +3,9 @@ package patientflowmonitoring
 class Monitor {
 	
 	List patients
-	List beds
+	List rooms
 	
-	static hasMany = [patients:Patient,beds:Bed]
+	static hasMany = [patients:Patient,rooms:Room]
 
     static constraints = {
     }

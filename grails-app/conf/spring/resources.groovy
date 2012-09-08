@@ -21,16 +21,40 @@ beans = {
 	orderrequestHandler(com.pfm.handler.OrderRequestHandler){}
 	consultationcompleted1Handler(com.pfm.handler.ConsultationCompleted1Handler){}
 	consultationcompleted2Handler(com.pfm.handler.ConsultationCompleted2Handler){}
+	requestreferralHandler(com.pfm.handler.RequestReferralHandler){}
 	waitfororderexecutionHandler(com.pfm.handler.WaitForOrderExecutionHandler){}
 	orderrequestcompletedHandler(com.pfm.handler.OrderRequestCompletedHandler){}
-	orderexecutioncompletedHandler(com.pfm.handler.OrderExecutionCompletedHandler){}
+	//orderexecutioncompletedHandler(com.pfm.handler.OrderExecutionCompletedHandler){}
+	ordersexecutioncompletedHandler(com.pfm.handler.OrdersExecutionCompletedHandler){}
 	bedrequestHandler(com.pfm.handler.BedRequestHandler){}
 	patientadmittedwithnobedHandler(com.pfm.handler.PatientAdmittedWithNoBedHandler){}
 	waitforbedHandler(com.pfm.handler.WaitForBedHandler){}
-	dischargeHandler(com.pfm.handler.DischargeHandler){}
 	patientadmittedwithbedHandler(com.pfm.handler.PatientAdmittedWithBedHandler){}
 	patienttransportrequestHandler(com.pfm.handler.PatientTransportRequestHandler){}
 	waitfortransportHandler(com.pfm.handler.WaitForTransportHandler){}
 	patienttransportstartedHandler(com.pfm.handler.PatientTransportStartedHandler){}
 	patientarrivedinbedHandler(com.pfm.handler.PatientArrivedInBedHandler){}
+	
+	//extended scenario events
+	consultationstarted3Handler(com.pfm.handler.ConsultationStarted3Handler){}
+	consultationcompleted3Handler(com.pfm.handler.ConsultationCompleted3Handler){}
+	waitforproceduresHandler(com.pfm.handler.WaitForProceduresHandler){}
+	procedurerequestHandler(com.pfm.handler.ProcedureRequestHandler){}
+	procedurestartedHandler(com.pfm.handler.ProcedureStartedHandler){}
+	procedurecompletedHandler(com.pfm.handler.ProcedureCompletedHandler){}
+	proceduresexecutioncompletedHandler(com.pfm.handler.ProceduresExecutionCompletedHandler){}
+	proceduresscheduledHandler(com.pfm.handler.ProceduresScheduledHandler){}
+	procedureupdatedHandler(com.pfm.handler.ProcedureUpdatedHandler){}
+	dischargecompletedHandler(com.pfm.handler.DischargeCompletedHandler){}
+	dischargerequestHandler(com.pfm.handler.DischargeRequestHandler){}
+	waitfordischargeHandler(com.pfm.handler.WaitForDischargeHandler){}
+	bedcleanuprequestHandler(com.pfm.handler.BedCleanUpRequestHandler){}
+	waitforbedcleanupHandler(com.pfm.handler.WaitForBedCleanUpHandler){}
+	bedcleanupstartedHandler(com.pfm.handler.BedCleanUpStartedHandler){}
+	bedcleanupcompletedHandler(com.pfm.handler.BedCleanUpCompletedHandler){}
+	
+	
+	
+	
+	
 }

@@ -8,8 +8,6 @@
 package patientflowmonitoring
 
 
-import win_687rhjv6vul._19086.teamworks.webservices.oppod.wfmcoordinationeventservice_tws.WFMCoordinationEventServicePortType;
-import win_687rhjv6vul._19086.teamworks.webservices.oppod.wfmcoordinationeventservice.*;
 import groovy.util.XmlSlurper
 import org.xml.sax.SAXException;
 import org.w3c.dom.*;
@@ -25,7 +23,8 @@ import grails.plugin.jms.*
 
 
 class CEPEventJob {
-	WFMCoordinationEventServicePortType oslerServiceClient
+	
+	PFMServerService	sendClient
 	def jmsService
     static triggers = {
       simple name: 'ReadCEPTrigger', repeatInterval: 2000l // execute job once in 2 seconds 
@@ -48,61 +47,61 @@ class CEPEventJob {
 								def event= connector.'connector-bundle'[0].@name
 								if ("${event.toString()}".compareTo("ConsultationStarted1")==0)
 								{
-									def patientId=connector."connector-bundle".ConsultationStartedObject.Patient_ID.text()
-									def locationId=connector."connector-bundle".ConsultationStartedObject.Location_ID.text()
-									def physicianId=connector."connector-bundle".ConsultationStartedObject.Physician_ID.text()
-									def timestamp=connector."connector-bundle".ConsultationStartedObject.timestamp.text()
+									def patientId=connector."connector-bundle".ConsultationStarted1Object.Patient_ID.text()
+									def physicianId=connector."connector-bundle".ConsultationStarted1Object.Physician_ID.text()
+									def locationId=connector."connector-bundle".ConsultationStarted1Object.Location_ID.text()
+									def timestamp=connector."connector-bundle".ConsultationStarted1Object.timestamp.text()
 									def timestp = modifyTimeStamp(timestamp)
-									msg= "event:$event,Patient_ID:$patientId,Provider_ID:$physicianId,Location_ID:$locationId,timestamp:$timestp"
-									ConsultationStarted1Response response=oslerServiceClient.consultationStarted1("$patientId", "$physicianId", "$locationId", "$timestamp")
+									msg= "event:$event,Patient_ID:$patientId,Physician_ID:$physicianId,Location_ID:$locationId,timestamp:$timestp"
+									ConsultationStarted1Response response=sendClient.consultationStarted1("$patientId", "$physicianId", "$locationId", "$timestamp")
 									}
 								else if ("${event.toString()}".compareTo("ConsultationStarted2")==0)
 								{
-									def patientId=connector."connector-bundle".ConsultationStartedObject.Patient_ID.text()
-									def locationId=connector."connector-bundle".ConsultationStartedObject.Location_ID.text()
-									def physicianId=connector."connector-bundle".ConsultationStartedObject.Physician_ID.text()
-									def timestamp=connector."connector-bundle".ConsultationStartedObject.timestamp.text()
+									def patientId=connector."connector-bundle".ConsultationStarted2Object.Patient_ID.text()
+									def physicianId=connector."connector-bundle".ConsultationStarted2Object.Physician_ID.text()
+									def locationId=connector."connector-bundle".ConsultationStarted2Object.Location_ID.text()
+									def timestamp=connector."connector-bundle".ConsultationStarted2Object.timestamp.text()
 									def timestp = modifyTimeStamp(timestamp)
-									msg= "event:$event,Patient_ID:$patientId,Provider_ID:$physicianId,Location_ID:$locationId,timestamp:$timestp"
-									ConsultationStarted2Response response = oslerServiceClient.consultationStarted2("$patientId","$physicianId","$locationId","$timestamp")
+									msg= "event:$event,Patient_ID:$patientId,Physician_ID:$physicianId,Location_ID:$locationId,timestamp:$timestp"
+									ConsultationStarted2Response response = sendClient.consultationStarted2("$patientId","$physicianId","$locationId","$timestamp")
 								}
 								else if ("${event.toString()}".compareTo("ConsultationCompleted1")==0)
 								{
-									def patientId=connector."connector-bundle".ConsultationCompletedObject.Patient_ID.text()
-									def locationId=connector."connector-bundle".ConsultationCompletedObject.Location_ID.text()
-									def physicianId=connector."connector-bundle".ConsultationCompletedObject.Physician_ID.text()
-									def timestamp=connector."connector-bundle".ConsultationCompletedObject.timestamp.text()
+									def patientId=connector."connector-bundle".ConsultationCompleted1Object.Patient_ID.text()
+									def physicianId=connector."connector-bundle".ConsultationCompleted1Object.Physician_ID.text()
+									def locationId=connector."connector-bundle".ConsultationCompleted1Object.Location_ID.text()
+									def timestamp=connector."connector-bundle".ConsultationCompleted1Object.timestamp.text()
 									def timestp = modifyTimeStamp(timestamp)
-									msg= "event:$event,Patient_ID:$patientId,Provider_ID:$physicianId,Location_ID:$locationId,timestamp:$timestp"
-									ConsultationCompleted1Response response = oslerServiceClient.consultationCompleted1("$patientId","$physicianId","$locationId","$timestamp")
+									msg= "event:$event,Patient_ID:$patientId,Physician_ID:$physicianId,Location_ID:$locationId,timestamp:$timestp"
+									ConsultationCompleted1Response response = sendClient.consultationCompleted1("$patientId","$physicianId","$locationId","$timestamp")
 								}
 								else if ("${event.toString()}".compareTo("ConsultationCompleted2")==0)
 								{
-									def patientId=connector."connector-bundle".ConsultationCompletedObject.Patient_ID.text()
-									def locationId=connector."connector-bundle".ConsultationCompletedObject.Location_ID.text()
-									def physicianId=connector."connector-bundle".ConsultationCompletedObject.Physician_ID.text()
-									def timestamp=connector."connector-bundle".ConsultationCompletedObject.timestamp.text()
+									def patientId=connector."connector-bundle".ConsultationCompleted2Object.Patient_ID.text()
+									def physicianId=connector."connector-bundle".ConsultationCompleted2Object.Physician_ID.text()
+									def locationId=connector."connector-bundle".ConsultationCompleted2Object.Location_ID.text()
+									def timestamp=connector."connector-bundle".ConsultationCompleted2Object.timestamp.text()
 									def timestp = modifyTimeStamp(timestamp)
-									msg= "event:$event,Patient_ID:$patientId,Provider_ID:$physicianId,Location_ID:$locationId,timestamp:$timestp"
-									ConsultationCompleted2Response response = oslerServiceClient.consultationCompleted2("$patientId","$physicianId","$locationId","$timestamp")
+									msg= "event:$event,Patient_ID:$patientId,Physician_ID:$physicianId,Location_ID:$locationId,timestamp:$timestp"
+									ConsultationCompleted2Response response = sendClient.consultationCompleted2("$patientId","$physicianId","$locationId","$timestamp")
 								}
 								else if ("${event.toString()}".compareTo("WaitForConsultation1")==0)
 								{
-									def patientId=connector."connector-bundle".WaitForConsultationObject.Patient_ID.text()
-									def locationId=connector."connector-bundle".WaitForConsultationObject.Location_ID.text()
-									def timestamp=connector."connector-bundle".WaitForConsultationObject.timestamp.text()
+									def patientId=connector."connector-bundle".WaitForConsultation1Object.Patient_ID.text()
+									def locationId=connector."connector-bundle".WaitForConsultation1Object.Location_ID.text()
+									def timestamp=connector."connector-bundle".WaitForConsultation1Object.timestamp.text()
 									def timestp = modifyTimeStamp(timestamp)
 									msg= "event:$event,Patient_ID:$patientId,Location_ID:$locationId,timestamp:$timestp"
-									WaitForConsultation1Response response = oslerServiceClient.waitForConsultation1("$patientId","$locationId","$timestamp")
+									WaitForConsultation1Response response = sendClient.waitForConsultation1("$patientId","$locationId","$timestamp")
 								}
 								else if ("${event.toString()}".compareTo("WaitForConsultation2")==0)
 								{
-									def patientId=connector."connector-bundle".WaitForConsultationObject.Patient_ID.text()
-									def locationId=connector."connector-bundle".WaitForConsultationObject.Location_ID.text()
-									def timestamp=connector."connector-bundle".WaitForConsultationObject.timestamp.text()
+									def patientId=connector."connector-bundle".WaitForConsultation2Object.Patient_ID.text()
+									def locationId=connector."connector-bundle".WaitForConsultation2Object.Location_ID.text()
+									def timestamp=connector."connector-bundle".WaitForConsultation2Object.timestamp.text()
 									def timestp = modifyTimeStamp(timestamp)
 									msg= "event:$event,Patient_ID:$patientId,Location_ID:$locationId,timestamp:$timestp"
-									WaitForConsultation2Response response = oslerServiceClient.waitForConsultation2("$patientId","$locationId","$timestamp")
+									WaitForConsultation2Response response = sendClient.waitForConsultation2("$patientId","$locationId","$timestamp")
 								}
 								else if ("${event.toString()}".compareTo("WaitForBed")==0)
 								{
@@ -111,7 +110,7 @@ class CEPEventJob {
 									def timestamp=connector."connector-bundle".WaitForBedObject.timestamp.text()
 									def timestp = modifyTimeStamp(timestamp)
 									msg= "event:$event,Patient_ID:$patientId,Unit_ID:$unitId,timestamp:$timestp"
-									WaitForBedResponse response = oslerServiceClient.waitForBed("$patientId","$unitId","$timestamp")
+									WaitForBedResponse response = sendClient.waitForBed("$patientId","$unitId","$timestamp")
 								}
 								else if ("${event.toString()}".compareTo("WaitForTransport")==0)
 								{
@@ -120,7 +119,7 @@ class CEPEventJob {
 									def timestamp=connector."connector-bundle".WaitForTransportObject.timestamp.text()
 									def timestp = modifyTimeStamp(timestamp)
 									msg= "event:$event,Patient_ID:$patientId,Unit_ID:$unitId,timestamp:$timestp"
-									WaitForTransportResponse response = oslerServiceClient.waitForTransport("$patientId","$unitId","$timestamp")
+									WaitForTransportResponse response = sendClient.waitForTransport("$patientId","$unitId","$timestamp")
 								}
 								else if ("${event.toString()}".compareTo("WaitForOrderExecution")==0)
 								{
@@ -128,7 +127,7 @@ class CEPEventJob {
 									def timestamp=connector."connector-bundle".WaitForOrderExecutionObject.timestamp.text()
 									def timestp = modifyTimeStamp(timestamp)
 									msg= "event:$event,Patient_ID:$patientId,timestamp:$timestp"
-									WaitForOrderExecutionResponse response = oslerServiceClient.waitForOrderExecution("$patientId","$timestamp")
+									WaitForOrderExecutionResponse response = sendClient.waitForOrderExecution("$patientId","$timestamp")
 								}
 								else if ("${event.toString()}".compareTo("PatientTransportStarted")==0)
 								{
@@ -137,25 +136,109 @@ class CEPEventJob {
 									def timestamp=connector."connector-bundle".PatientTransportStartedObject.timestamp.text()
 									def timestp = modifyTimeStamp(timestamp)
 									msg= "event:$event,Patient_ID:$patientId,Unit_ID:$unitId,timestamp:$timestp"
-									PatientTransportStartedResponse response = oslerServiceClient.patientTransportStarted("$patientId","$unitId","$timestamp")
+									PatientTransportStartedResponse response = sendClient.patientTransportStarted("$patientId","$unitId","$timestamp")
 								}
 								else if ("${event.toString()}".compareTo("PatientArrivedInBed")==0)
 								{
 									def patientId=connector."connector-bundle".PatientArrivedInBedObject.Patient_ID.text()
-									def bedId=connector."connector-bundle".PatientArrivedInBedObject.Bed_ID.text()
+									def locationId=connector."connector-bundle".PatientArrivedInBedObject.Location_ID.text()
 									def unitId=connector."connector-bundle".PatientArrivedInBedObject.Unit_ID.text()
 									def timestamp=connector."connector-bundle".PatientArrivedInBedObject.timestamp.text()
 									def timestp = modifyTimeStamp(timestamp)
-									msg= "event:$event,Patient_ID:$patientId,Bed_ID:$bedId,Unit_ID:$unitId,timestamp:$timestp"
-									PatientArriveInBedResponse response = oslerServiceClient.patientArriveInBed("$patientId","$bedId","$unitId","$timestamp")
+									msg= "event:$event,Patient_ID:$patientId,Location_ID:$locationId,Unit_ID:$unitId,timestamp:$timestp"
+									PatientArrivedInBedResponse response = sendClient.patientArrivedInBed("$patientId","$locationId","$unitId","$timestamp")
 								}
-								else if ("${event.toString()}".compareTo("OrderExecutionCompleted")==0)
+								else if ("${event.toString()}".compareTo("OrdersExecutionCompleted")==0)
 								{
-									def patientId=connector."connector-bundle".OrderExecutionCompletedObject.Patient_ID.text()
-									def timestamp=connector."connector-bundle".OrderExecutionCompletedObject.timestamp.text()
+									def patientId=connector."connector-bundle".OrdersExecutionCompletedObject.Patient_ID.text()
+									def timestamp=connector."connector-bundle".OrdersExecutionCompletedObject.timestamp.text()
 									def timestp = modifyTimeStamp(timestamp)
 									msg= "event:$event,Patient_ID:$patientId,timestamp:$timestp"
-									OrderExecutionCompletedResponse response = oslerServiceClient.orderExecutionCompleted("$patientId","$timestamp")
+									OrdersExecutionCompletedResponse response = sendClient.ordersExecutionCompleted("$patientId","$timestamp")
+								}
+								else if ("${event.toString()}".compareTo("WaitForProcedures")==0)
+								{
+									def patientId=connector."connector-bundle".WaitForProceduresObject.Patient_ID.text()
+									def unitId=connector."connector-bundle".WaitForProceduresObject.Unit_ID.text()
+									def timestamp=connector."connector-bundle".WaitForProceduresObject.timestamp.text()
+									def timestp = modifyTimeStamp(timestamp)
+									msg= "event:$event,Patient_ID:$patientId,Unit_ID:$unitId,timestamp:$timestp"
+									WaitForProceduresResponse response = sendClient.waitForProcedures("$patientId","$unitId","$timestamp")
+								}
+								else if ("${event.toString()}".compareTo("ProceduresExecutionCompleted")==0)
+								{
+									def patientId=connector."connector-bundle".ProceduresExecutionCompletedObject.Patient_ID.text()
+									def timestamp=connector."connector-bundle".ProceduresExecutionCompletedObject.timestamp.text()
+									def timestp = modifyTimeStamp(timestamp)
+									msg= "event:$event,Patient_ID:$patientId,timestamp:$timestp"
+									ProceduresExecutionCompletedResponse response = sendClient.proceduresExecutionCompleted("$patientId","$timestamp")
+								}
+								else if ("${event.toString()}".compareTo("ConsultationStarted3")==0)
+								{
+									def patientId=connector."connector-bundle".ConsultationStarted3Object.Patient_ID.text()
+									def physicianId=connector."connector-bundle".ConsultationStarted3Object.Physician_ID.text()
+									def locationId=connector."connector-bundle".ConsultationStarted3Object.Location_ID.text()
+									def timestamp=connector."connector-bundle".ConsultationStarted3Object.timestamp.text()
+									def timestp = modifyTimeStamp(timestamp)
+									msg= "event:$event,Patient_ID:$patientId,Physician_ID:$physicianId,Location_ID:$locationId,timestamp:$timestp"
+									ConsultationStarted3Response response = sendClient.consultationStarted3("$patientId","$physicianId","$locationId","$timestamp")
+								}
+								else if ("${event.toString()}".compareTo("ConsultationCompleted3")==0)
+								{
+									def patientId=connector."connector-bundle".ConsultationCompleted3Object.Patient_ID.text()
+									def physicianId=connector."connector-bundle".ConsultationCompleted3Object.Physician_ID.text()
+									def locationId=connector."connector-bundle".ConsultationCompleted3Object.Location_ID.text()
+									def timestamp=connector."connector-bundle".ConsultationCompleted3Object.timestamp.text()
+									def timestp = modifyTimeStamp(timestamp)
+									msg= "event:$event,Patient_ID:$patientId,Physician_ID:$physicianId,Location_ID:$locationId,timestamp:$timestp"
+									ConsultationCompleted3Response response = sendClient.consultationCompleted3("$patientId","$physicianId","$locationId","$timestamp")
+								}
+								else if ("${event.toString()}".compareTo("WaitForDischarge")==0)
+								{
+									def patientId=connector."connector-bundle".WaitForDischargeObject.Patient_ID.text()
+									def unitId=connector."connector-bundle".WaitForDischargeObject.Unit_ID.text()
+									def timestamp=connector."connector-bundle".WaitForDischargeObject.timestamp.text()
+									def timestp = modifyTimeStamp(timestamp)
+									msg= "event:$event,Patient_ID:$patientId,Unit_ID:$unitId,timestamp:$timestp"
+									WaitForDischargeResponse response = sendClient.waitForDischarge("$patientId","$unitId","$timestamp")
+								}
+								else if ("${event.toString()}".compareTo("DischargeCompleted")==0)
+								{
+									def patientId=connector."connector-bundle".DischargeCompletedObject.Patient_ID.text()
+									def unitId=connector."connector-bundle".DischargeCompletedObject.Unit_ID.text()
+									def timestamp=connector."connector-bundle".DischargeCompletedObject.timestamp.text()
+									def timestp = modifyTimeStamp(timestamp)
+									msg= "event:$event,Patient_ID:$patientId,Unit_ID:$unitId,timestamp:$timestp"
+									DischargeCompletedResponse response = sendClient.dischargeCompleted("$patientId","$unitId","$timestamp")
+								}
+								else if ("${event.toString()}".compareTo("WaitForBedCleanUp")==0)
+								{
+									def locationId=connector."connector-bundle".WaitForBedCleanUpObject.Location_ID.text()
+									def unitId=connector."connector-bundle".WaitForBedCleanUpObject.Unit_ID.text()
+									def timestamp=connector."connector-bundle".WaitForBedCleanUpObject.timestamp.text()
+									def timestp = modifyTimeStamp(timestamp)
+									msg= "event:$event,Location_ID:$locationId,Unit_ID:$unitId,timestamp:$timestp"
+									WaitForBedCleanUpResponse response = sendClient.waitForBedCleanUp("$locationId","$unitId","$timestamp")
+								}
+								else if ("${event.toString()}".compareTo("BedCleanUpStarted")==0)
+								{
+									def houseKeepingId=connector."connector-bundle".BedCleanUpStartedObject.HouseKeeping_ID.text()
+									def locationId=connector."connector-bundle".BedCleanUpStartedObject.Location_ID.text()
+									def unitId=connector."connector-bundle".BedCleanUpStartedObject.Unit_ID.text()
+									def timestamp=connector."connector-bundle".BedCleanUpStartedObject.timestamp.text()
+									def timestp = modifyTimeStamp(timestamp)
+									msg= "event:$event,HouseKeeping_ID:$houseKeepingId,Location_ID:$locationId,Unit_ID:$unitId,timestamp:$timestp"
+									BedCleanUpStartedResponse response = sendClient.bedCleanUpStarted("$houseKeepingId","$locationId","$unitId","$timestamp")
+								}
+								else if ("${event.toString()}".compareTo("BedCleanUpCompleted")==0)
+								{
+									def houseKeepingId=connector."connector-bundle".BedCleanUpCompletedObject.HouseKeeping_ID.text()
+									def locationId=connector."connector-bundle".BedCleanUpCompletedObject.Location_ID.text()
+									def unitId=connector."connector-bundle".BedCleanUpCompletedObject.Unit_ID.text()
+									def timestamp=connector."connector-bundle".BedCleanUpCompletedObject.timestamp.text()
+									def timestp = modifyTimeStamp(timestamp)
+									msg= "event:$event,HouseKeeping_ID:$houseKeepingId,Location_ID:$locationId,Unit_ID:$unitId,timestamp:$timestp"
+									BedCleanUpCompletedResponse response = sendClient.bedCleanUpCompleted("$houseKeepingId","$locationId","$unitId","$timestamp")
 								}
 								iterator++
 								it.delete()

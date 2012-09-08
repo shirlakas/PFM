@@ -1,0 +1,4 @@
+["state":"WAIT_FOR_CONSULTATION1","duration":"20"},{"state":"WAIT_FOR_CONSULTATION2","duration":"50"},{"state":"WAIT_FOR_BED_CW","duration":"0"},
+{"state":"WAIT_FOR_BED_CW","duration":"150"},{"state":"WAIT_FOR_TRANSPORT_CW","duration":"25"},{"state":"WAIT_FOR_CONSULTATION1","duration":"2"},
+{"state":"WAIT_FOR_CONSULTATION2","duration":"-235"},{"state":"WAIT_FOR_BED_CW","duration":"0"},{"state":"WAIT_FOR_BED_CW","duration":"9"},
+{"state":"WAIT_FOR_BED_CW","duration":"3"},{"state":"WAIT_FOR_TRANSPORT_CW","duration":"0"},{"state":"WAIT_FOR_TRANSPORT_CW","duration":"0"}]

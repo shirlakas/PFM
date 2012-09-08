@@ -16,6 +16,7 @@ class WaitForOrderExecutionHandler extends EventHandler {
 		
 		def patientState = new PatientState()
 		patientState.stateName = PatientStateName.WAIT_FOR_ORDER_EXECUTION
+		patientState.target = 30
 //		patient.setCurrentState(patientState,null)
 		updatePatientState(patientState)
 		return null;

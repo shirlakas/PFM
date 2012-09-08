@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+<! DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
       
 <%
@@ -11,11 +11,12 @@
 		patientLocations<<"${it.key}"
 	})
 	
-	
-	def roomList = mapping.keySet().toList();
-	//roomList.each({
-	//	patients<<"${it}"	
-	//})
+	def rooms=[] 
+	def roomList = mapping.values().toList();
+	mapping.entrySet.each({
+		rooms<<"${it.value}"
+			
+	})
 %>      
       
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -127,14 +128,14 @@
 <body id="dt_example">
 <div id="container">
 <nav:render group="tabs"/>
-<h1>OSLER Unit Map</h1>
+<h1>Floor Directory</h1>
 
+<!-- %=rooms[]%> -->
 <table border="1" style="width: 100%">
   <tbody>
     <tr>
       <td width="200" valign="top">
 		<div id="dynamic">
-
 			<table cellpadding="0" cellspacing="0" border="0" class="display" id="units">
 			<thead>
 				<tr>
@@ -145,13 +146,35 @@
 				<%p=0%>
 				<g:while test="${p < unitIds?.size}">
 					<% def css=session.unitSelected==unitIds[p]?"selected":""  %>
-					<tr class="<%=css%>"><td class="center"><a href="<%=request.getContextPath() %>/unit/showUnitPerformance/<%=unitIds[p] %>"><%=unitIds[p] %></a></td></tr>
+					<tr class="<%=css%>"><td class="center"><a href="<%=request.getContextPath() %>/unit/showUnitPerformance/ED"><%=unitIds[p] %></a></td></tr>
 					<%p++%>
 				</g:while>
 			</tbody>
 			</table>
+		</div>	
+		</td>
+		<td width="200" valign="top">
+		<div> 
+			<table cellpadding="0" cellspacing="0" border="0" class="display" >
+			<thead>
+				<tr>
+					<th>Rooms</th>
+				</tr>
+			</thead>
+			<tbody>
+			<tr class="<%=css%>">
+			<td class="center"><a href="<%=request.getContextPath() %>/room/getRoomDetails/R105">R105</a></td></tr>
+			<tr class="<%=css%>">	<td class="center"><a href="<%=request.getContextPath() %>/room/getRoomDetails/R106">R106</a></td></tr>
+			<tr class="<%=css%>">	<td class="center"><a href="<%=request.getContextPath() %>/room/getRoomDetails/R107">R107</a></td></tr>
+				
+			</tbody>
+			</table>
 			
-			<table cellpadding="0" cellspacing="0" border="0" class="display" id="patients">
+		</div>
+		</td>
+		<td width="200" valign="top">
+		<div>
+		<table cellpadding="0" cellspacing="0" border="0" class="display" id="patients">
 			<thead>
 				<tr>
 					<th>Patients</th>
@@ -164,17 +187,14 @@
 					<tr class="<%=css%>"><td class="center">
 						<a href="getPatientDetails/<%=patients[p] %>"><%=patients[p] %></a>
 						<br/>
-						<font size=1 color=grey><b><%=patientLocations[p] %></b></font>
-					
+									
 					</td></tr>
 					<%p++%>
 				</g:while>
 			</tbody>
 			</table>
-		</div>
-		</td>
-      <td id="td_map"><img alt="plane1" src="<%=request.getContextPath() %>/images/plan1.png" height="614" width="850" id="map" usemap="#unitmap" border="0"/>
-      <img src="<%=request.getContextPath() %>/images/blue_spot.png" id="marker" style="display: none;position: absolute;" title="marker"/></td>
+			</div>
+			</td>
     </tr>
   </tbody>
 </table>
