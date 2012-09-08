@@ -99,6 +99,41 @@
 									 }
 					]
 				} );
+					 //iterate through all the rows in the state table 
+	                //excluding the first row because those are column titles
+	                // and colour the values for duration depending on the target value 
+	                // 
+	                $(".state tr:not(:first)").each(function() { 
+	                    
+	                    //get the value of the table cell located
+	                    //in the third column of the current row
+	                    var duration = $(this).find("td:nth-child(4)").html();
+	                    var target = $(this).find("td:nth-child(5)").html();
+	                    
+	                    //check if target is null
+	                    if (target == 'N/A'){
+		                    }
+	                    else if (duration < 2.0/3.0*target){
+	                        //change the color of the text to green if duration is less than 2/3 of target
+	                       // $(this).find("td:nth-child(4)").css("color", "#00FF00");
+	                       //change the background color to green if duration is less than 2/3 of target
+	                    	$(this).find("td").css("background-color", "#00FF00");	
+	                    }
+	                    else if ((duration >= 2.0/3.0*target)&&(duration <= target)){
+	                        //change the background color to yellow if duration is more than 2/3 of target
+	                        // but less than target
+	                        $(this).find("td").css("background-color", "#F4FA58");
+	                      //change the color of the text to yellow if duration is more than 2/3 of target
+	                        // but less than target
+	                       // $(this).find("td:nth-child(4)").css("color", "#FACC2E");
+	                    }
+	                    else if(duration > target){
+	                        //change the color of the text to red if duration is more than target
+	                       // $(this).find("td:nth-child(4)").css("color", "#FF0000"); 
+	                       //change the background colour to red if duration is more than target
+	                        $(this).find("td").css("background-color", "#FF0000"); 
+	                    }
+	                });
 
 				$('#menutab').tabify();
 			} );
@@ -141,7 +176,7 @@
 
 		<div id="clinicalInfo">
 			<h1>Patient States</h1>
-			<div id="states"></div>
+			<div id="states" class = "state"></div>
 			<h1>Overall Duration: <g:formatNum number="${totalhrs}" format="### hours"/> <g:formatNum number="${totalmins}" format="### mins"/></h1>			
 		</div>
 				
